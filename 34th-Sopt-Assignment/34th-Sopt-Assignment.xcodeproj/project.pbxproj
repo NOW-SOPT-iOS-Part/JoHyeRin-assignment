@@ -24,6 +24,7 @@
 		D0A544892BC1BCF400E7F102 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544802BC1BCF300E7F102 /* Pretendard-Light.otf */; };
 		D0A5448A2BC1BCF400E7F102 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544812BC1BCF300E7F102 /* Pretendard-Medium.otf */; };
 		D0A5448B2BC1BCF400E7F102 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */; };
+		D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A5448D2BC7C26700E7F102 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D0A544802BC1BCF300E7F102 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		D0A544812BC1BCF300E7F102 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		D0A5448D2BC7C26700E7F102 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				D0A544622BC1B97500E7F102 /* SceneDelegate.swift */,
 				D0A544642BC1B97500E7F102 /* ViewController.swift */,
 				D0A544792BC1BCC800E7F102 /* Fonts */,
+				D0A5448C2BC7C24000E7F102 /* Extensions */,
 				D0A544662BC1B97500E7F102 /* Main.storyboard */,
 				D0A544692BC1B97800E7F102 /* Assets.xcassets */,
 				D0A5446B2BC1B97800E7F102 /* LaunchScreen.storyboard */,
@@ -104,6 +107,14 @@
 				D0A5447D2BC1BCF300E7F102 /* Pretendard-Thin.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D0A5448C2BC7C24000E7F102 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0A5448D2BC7C26700E7F102 /* UIView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */,
 				D0A544652BC1B97500E7F102 /* ViewController.swift in Sources */,
 				D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */,
 				D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */,
