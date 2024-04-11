@@ -26,6 +26,9 @@
 		D0A5448B2BC1BCF400E7F102 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */; };
 		D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A5448D2BC7C26700E7F102 /* UIView+.swift */; };
 		D0A544932BC7CA6000E7F102 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544922BC7CA6000E7F102 /* UIFont+.swift */; };
+		D0A544952BC7CE1F00E7F102 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544942BC7CE1E00E7F102 /* UITextField+.swift */; };
+		D0A544972BC7D21900E7F102 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544962BC7D21800E7F102 /* UIButton+.swift */; };
+		D0A544992BC7DA0500E7F102 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544982BC7DA0500E7F102 /* UIStackView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		D0A5448D2BC7C26700E7F102 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		D0A544922BC7CA6000E7F102 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		D0A544942BC7CE1E00E7F102 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		D0A544962BC7D21800E7F102 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		D0A544982BC7DA0500E7F102 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,9 @@
 			children = (
 				D0A5448D2BC7C26700E7F102 /* UIView+.swift */,
 				D0A544922BC7CA6000E7F102 /* UIFont+.swift */,
+				D0A544942BC7CE1E00E7F102 /* UITextField+.swift */,
+				D0A544962BC7D21800E7F102 /* UIButton+.swift */,
+				D0A544982BC7DA0500E7F102 /* UIStackView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -208,10 +217,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */,
+				D0A544952BC7CE1F00E7F102 /* UITextField+.swift in Sources */,
 				D0A544652BC1B97500E7F102 /* ViewController.swift in Sources */,
 				D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */,
 				D0A544932BC7CA6000E7F102 /* UIFont+.swift in Sources */,
 				D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */,
+				D0A544992BC7DA0500E7F102 /* UIStackView+.swift in Sources */,
+				D0A544972BC7D21900E7F102 /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
