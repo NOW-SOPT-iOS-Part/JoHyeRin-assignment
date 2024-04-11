@@ -25,6 +25,7 @@
 		D0A5448A2BC1BCF400E7F102 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544812BC1BCF300E7F102 /* Pretendard-Medium.otf */; };
 		D0A5448B2BC1BCF400E7F102 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */; };
 		D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A5448D2BC7C26700E7F102 /* UIView+.swift */; };
+		D0A544932BC7CA6000E7F102 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544922BC7CA6000E7F102 /* UIFont+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D0A544812BC1BCF300E7F102 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		D0A5448D2BC7C26700E7F102 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		D0A544922BC7CA6000E7F102 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A5448D2BC7C26700E7F102 /* UIView+.swift */,
+				D0A544922BC7CA6000E7F102 /* UIFont+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */,
 				D0A544652BC1B97500E7F102 /* ViewController.swift in Sources */,
 				D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */,
+				D0A544932BC7CA6000E7F102 /* UIFont+.swift in Sources */,
 				D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
