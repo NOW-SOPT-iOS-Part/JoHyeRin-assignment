@@ -23,6 +23,11 @@ final class LoginViewController: UIViewController {
         let textField = UITextField()
         textField.setTextField(forBackgroundColor: .tvingGray4, forCornerRadius: 3)
         textField.setPlaceholder(placeholder: "아이디", fontColor: .tvingGray2, font: .pretendardFont(weight: 600, size: 15))
+        textField.setTextFont(forFont: .pretendardFont(weight: 600, size: 15), forFontColor: .tvingGray2)
+        textField.addPadding(left: 17)
+        textField.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
+        textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEnd)
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         return textField
     }()
@@ -31,6 +36,12 @@ final class LoginViewController: UIViewController {
         let textField = UITextField()
         textField.setTextField(forBackgroundColor: .tvingGray4, forCornerRadius: 3)
         textField.setPlaceholder(placeholder: "비밀번호", fontColor: .tvingGray2, font: .pretendardFont(weight: 600, size: 15))
+        textField.setTextFont(forFont: .pretendardFont(weight: 600, size: 15), forFontColor: .tvingGray2)
+
+        textField.addPadding(left: 17)
+        textField.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
+        textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEnd)
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         return textField
     }()
@@ -39,6 +50,7 @@ final class LoginViewController: UIViewController {
         let button = UIButton()
         button.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
         button.setButtonText(forText: "로그인하기", forfont: .pretendardFont(weight: 600, size: 14), forfontColor: .tvingGray2)
+        button.isEnabled = false
         
         return button
     }()
@@ -103,6 +115,27 @@ final class LoginViewController: UIViewController {
         self.view.backgroundColor = .black
         
         setupLayout()
+    }
+    
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.tvingGray2.cgColor
+    }
+    
+    @objc func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let idText = idTextField.text, let pwText = pwTextField.text {
+            if idText.isEmpty == false && pwText.isEmpty == false {
+                loginButton.isEnabled = true
+                loginButton.setButton(forBackgroundColor: .tvingRed, forBorderWidth: 0, forCornerRadius: 1)
+            } else {
+                loginButton.isEnabled = false
+                loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
+            }
+        }
     }
 }
 
