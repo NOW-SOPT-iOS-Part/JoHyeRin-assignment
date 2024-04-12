@@ -28,18 +28,23 @@ extension UIButton {
         }
     }
     
-    func setButtonText(forText: String, forfont: UIFont, forfontColor: UIColor?) {
+    func setButtonText(forText: String, forfont: UIFont, forfontColor: UIColor? = nil) {
         self.setTitle(forText, for: .normal)
         self.titleLabel?.font = forfont
-        self.titleLabel?.textColor = forfontColor
+        
+        if let forfontColor {
+            self.titleLabel?.textColor = forfontColor
+        }
     }
     
     func underlineTitle(forTitle: String) {
-        let attributedTitle = NSMutableAttributedString(string: forTitle)
-        attributedTitle.addAttribute(.underlineStyle,
-                                     value: NSUnderlineStyle.single.rawValue,
-                                     range: NSRange(location: 0, length: forTitle.count))
+        guard let buttonTitle = self.titleLabel?.text else { return }
         
-        self.setAttributedTitle(attributedTitle, for: .normal)
+        let rangeToUnderLine = (buttonTitle as NSString).range(of: forTitle)
+        
+        let underLineTitle = NSMutableAttributedString(string: buttonTitle)
+        underLineTitle.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: rangeToUnderLine)
+        
+        self.setAttributedTitle(underLineTitle, for: .normal)
     }
 }

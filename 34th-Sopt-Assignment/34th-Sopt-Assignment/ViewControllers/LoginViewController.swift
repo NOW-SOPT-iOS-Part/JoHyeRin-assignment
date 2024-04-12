@@ -91,8 +91,9 @@ final class LoginViewController: UIViewController {
     
     private lazy var createNicknameButton: UIButton = {
         let button = UIButton()
-        button.setButtonText(forText: "닉네임 만들러가기", forfont: .pretendardFont(weight: 400, size: 14), forfontColor: .tvingGray2)
+        button.setButtonText(forText: "닉네임 만들러가기", forfont: .pretendardFont(weight: 400, size: 14))
         button.underlineTitle(forTitle: button.titleLabel?.text ?? "")
+        button.setTitleColor(.tvingGray2, for: .normal)
         
         return button
     }()
