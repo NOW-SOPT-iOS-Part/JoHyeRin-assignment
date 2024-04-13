@@ -10,6 +10,26 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
     
+    private lazy var isIdTextEmpty: Bool = true {
+        didSet {
+            if isIdTextEmpty {
+                idClearButton.isHidden = true
+            } else {
+                idClearButton.isHidden = false
+            }
+        }
+    }
+    
+    private lazy var isPwTextEmpty: Bool = true {
+        didSet {
+            if isPwTextEmpty {
+                pwClearButton.alpha = 0
+            } else {
+                pwClearButton.alpha = 100
+            }
+        }
+    }
+    
     private lazy var isMaskButtonSelected: Bool = false {
         didSet {
             if isMaskButtonSelected {
@@ -86,7 +106,7 @@ final class LoginViewController: UIViewController {
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         button.contentMode = .scaleAspectFit
         button.tag = 2
-        button.isHidden = true
+        button.alpha = 0
         button.addTarget(self, action: #selector(clearButtonTapped(_:)), for: .touchUpInside)
         
         return button
@@ -97,13 +117,12 @@ final class LoginViewController: UIViewController {
         button.setImage(UIImage(named: "shownEyeImage"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         button.contentMode = .scaleAspectFit
-        button.isHidden = true
         button.addTarget(self, action: #selector(maskButtonTapped), for: .touchUpInside)
         
         return button
     }()
     
-    let buttonStackView: UIStackView = {
+    private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -114,7 +133,7 @@ final class LoginViewController: UIViewController {
     
     private lazy var loginButton: UIButton = {
         let button = UIButton()
-        button.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
+        button.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 3)
         button.setButtonText(forText: "로그인하기", forfont: .pretendardFont(weight: 600, size: 14), forfontColor: .tvingGray2)
         button.isEnabled = false
         
@@ -182,61 +201,6 @@ final class LoginViewController: UIViewController {
         
         setupLayout()
     }
-    
-    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.tvingGray2.cgColor
-    }
-    
-    @objc func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 0
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        if let idText = idTextField.text, let pwText = pwTextField.text {
-            if !idText.isEmpty {
-                idClearButton.isHidden = false
-            } else {
-                idClearButton.isHidden = true
-            }
-            
-            if !pwText.isEmpty {
-                pwClearButton.isHidden = false
-                maskButton.isHidden = false
-            } else {
-                pwClearButton.isHidden = true
-                maskButton.isHidden = true
-            }
-            
-            if !idText.isEmpty && !pwText.isEmpty {
-                loginButton.isEnabled = true
-                loginButton.setButton(forBackgroundColor: .tvingRed, forBorderWidth: 0, forCornerRadius: 1)
-            } else {
-                loginButton.isEnabled = false
-                loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
-            }
-        }
-    }
-    
-    @objc func maskButtonTapped() {
-        isMaskButtonSelected.toggle()
-    }
-    
-    @objc func clearButtonTapped(_ button: UIButton) {
-        switch button.tag {
-        case 1:
-            idTextField.text = ""
-            idClearButton.isHidden = true
-        case 2:
-            pwTextField.text = ""
-            pwClearButton.isHidden = true
-            maskButton.isHidden = true
-            isMaskButtonSelected = false
-        default:
-            break
-        }
-        loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
-    }
 }
 
 extension LoginViewController {
@@ -252,7 +216,7 @@ extension LoginViewController {
         )
         
         labelStackView.addArrangedSubviews(findIdLabel, divider, findPwLabel)
-        buttonStackView.addArrangedSubviews(maskButton, pwClearButton)
+        buttonStackView.addArrangedSubviews(pwClearButton, maskButton)
         
         loginLabel.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(90)
@@ -261,23 +225,20 @@ extension LoginViewController {
         
         idTextField.snp.makeConstraints {
             $0.top.equalTo(loginLabel.snp.bottom).offset(31)
-            $0.centerX.equalToSuperview()
             $0.height.equalTo(52)
-            $0.width.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         pwTextField.snp.makeConstraints {
             $0.top.equalTo(idTextField.snp.bottom).offset(7)
-            $0.centerX.equalToSuperview()
             $0.height.equalTo(52)
-            $0.width.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         loginButton.snp.makeConstraints {
             $0.top.equalTo(pwTextField.snp.bottom).offset(21)
-            $0.centerX.equalToSuperview()
             $0.height.equalTo(52)
-            $0.width.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         labelStackView.snp.makeConstraints {
@@ -296,8 +257,47 @@ extension LoginViewController {
             $0.height.equalTo(accountLabel.snp.height)
         }
     }
-}
-
-#Preview {
-    LoginViewController()
+    
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.tvingGray2.cgColor
+    }
+    
+    @objc func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let idText = idTextField.text, let pwText = pwTextField.text {
+            isIdTextEmpty = idText.isEmpty
+            isPwTextEmpty = pwText.isEmpty
+            
+            if !idText.isEmpty && !pwText.isEmpty {
+                loginButton.isEnabled = true
+                loginButton.setButton(forBackgroundColor: .tvingRed, forBorderWidth: 0, forCornerRadius: 3)
+            } else {
+                loginButton.isEnabled = false
+                loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 3)
+                loginButton.titleLabel?.textColor = .white
+            }
+        }
+    }
+    
+    @objc func maskButtonTapped() {
+        isMaskButtonSelected.toggle()
+    }
+    
+    @objc func clearButtonTapped(_ button: UIButton) {
+        switch button.tag {
+        case 1:
+            idTextField.text = ""
+            isIdTextEmpty = true
+        case 2:
+            pwTextField.text = ""
+            isPwTextEmpty = true
+        default:
+            break
+        }
+        loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
+    }
 }
