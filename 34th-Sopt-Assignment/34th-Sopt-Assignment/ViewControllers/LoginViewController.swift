@@ -10,6 +10,18 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
     
+    private lazy var isMaskButtonSelected: Bool = false {
+        didSet {
+            if isMaskButtonSelected {
+                maskButton.setImage(UIImage(named: "hiddenEyeImage"), for: .normal)
+                pwTextField.isSecureTextEntry = false
+            } else {
+                maskButton.setImage(UIImage(named: "shownEyeImage"), for: .normal)
+                pwTextField.isSecureTextEntry = true
+            }
+        }
+    }
+    
     private let loginLabel: UILabel = {
         let label = UILabel()
         label.text = "TVING ID 로그인"
@@ -29,6 +41,11 @@ final class LoginViewController: UIViewController {
         textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEnd)
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
+        let rightView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
+        rightView.addSubview(idClearButton)
+        textField.rightViewMode = .always
+        textField.rightView = rightView
+        
         return textField
     }()
     
@@ -37,13 +54,62 @@ final class LoginViewController: UIViewController {
         textField.setTextField(forBackgroundColor: .tvingGray4, forCornerRadius: 3)
         textField.setPlaceholder(placeholder: "비밀번호", fontColor: .tvingGray2, font: .pretendardFont(weight: 600, size: 15))
         textField.setTextFont(forFont: .pretendardFont(weight: 600, size: 15), forFontColor: .tvingGray2)
-
         textField.addPadding(left: 17)
+        textField.isSecureTextEntry = true
         textField.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
         textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEnd)
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
+        let rightView = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
+        rightView.addSubviews(buttonStackView)
+        textField.rightViewMode = .always
+        textField.rightView = rightView
+        
         return textField
+    }()
+    
+    private lazy var idClearButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "clearButtonImage"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.contentMode = .scaleAspectFit
+        button.tag = 1
+        button.isHidden = true
+        button.addTarget(self, action: #selector(clearButtonTapped), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var pwClearButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "clearButtonImage"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.contentMode = .scaleAspectFit
+        button.tag = 2
+        button.isHidden = true
+        button.addTarget(self, action: #selector(clearButtonTapped(_:)), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var maskButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "shownEyeImage"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.contentMode = .scaleAspectFit
+        button.isHidden = true
+        button.addTarget(self, action: #selector(maskButtonTapped), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    let buttonStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
+        
+        return stackView
     }()
     
     private lazy var loginButton: UIButton = {
@@ -128,7 +194,21 @@ final class LoginViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let idText = idTextField.text, let pwText = pwTextField.text {
-            if idText.isEmpty == false && pwText.isEmpty == false {
+            if !idText.isEmpty {
+                idClearButton.isHidden = false
+            } else {
+                idClearButton.isHidden = true
+            }
+            
+            if !pwText.isEmpty {
+                pwClearButton.isHidden = false
+                maskButton.isHidden = false
+            } else {
+                pwClearButton.isHidden = true
+                maskButton.isHidden = true
+            }
+            
+            if !idText.isEmpty && !pwText.isEmpty {
                 loginButton.isEnabled = true
                 loginButton.setButton(forBackgroundColor: .tvingRed, forBorderWidth: 0, forCornerRadius: 1)
             } else {
@@ -136,6 +216,26 @@ final class LoginViewController: UIViewController {
                 loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
             }
         }
+    }
+    
+    @objc func maskButtonTapped() {
+        isMaskButtonSelected.toggle()
+    }
+    
+    @objc func clearButtonTapped(_ button: UIButton) {
+        switch button.tag {
+        case 1:
+            idTextField.text = ""
+            idClearButton.isHidden = true
+        case 2:
+            pwTextField.text = ""
+            pwClearButton.isHidden = true
+            maskButton.isHidden = true
+            isMaskButtonSelected = false
+        default:
+            break
+        }
+        loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
     }
 }
 
@@ -152,6 +252,7 @@ extension LoginViewController {
         )
         
         labelStackView.addArrangedSubviews(findIdLabel, divider, findPwLabel)
+        buttonStackView.addArrangedSubviews(maskButton, pwClearButton)
         
         loginLabel.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(90)
