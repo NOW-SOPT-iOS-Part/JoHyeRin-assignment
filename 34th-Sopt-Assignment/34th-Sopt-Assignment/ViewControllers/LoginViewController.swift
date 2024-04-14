@@ -136,6 +136,7 @@ final class LoginViewController: UIViewController {
         button.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 3)
         button.setButtonText(forText: "로그인하기", forfont: .pretendardFont(weight: 600, size: 14), forfontColor: .tvingGray2)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -219,7 +220,7 @@ extension LoginViewController {
         buttonStackView.addArrangedSubviews(pwClearButton, maskButton)
         
         loginLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(90)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(50)
             $0.centerX.equalToSuperview()
         }
         
@@ -299,5 +300,11 @@ extension LoginViewController {
             break
         }
         loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
+    }
+    
+    @objc func loginButtonTapped() {
+        let welcomViewController = WelcomeViewController()
+        welcomViewController.id = idTextField.text
+        navigationController?.pushViewController(welcomViewController, animated: true)
     }
 }
