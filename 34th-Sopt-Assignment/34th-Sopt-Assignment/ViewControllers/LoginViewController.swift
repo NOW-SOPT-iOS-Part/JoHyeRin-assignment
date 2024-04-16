@@ -131,6 +131,24 @@ final class LoginViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var textfieldStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 7
+        
+        return stackView
+    }()
+    
+    private let inValidEmailLabel: UILabel = {
+        let label = UILabel()
+        label.text = "올바르지 않은 형식의 이메일입니다!"
+        label.textColor = .tvingRed
+        label.font = .pretendardFont(weight: 500, size: 13)
+        label.isHidden = true
+        
+        return label
+    }()
+    
     private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 3)
@@ -200,6 +218,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         
+        hideKeyboard()
         setupLayout()
     }
 }
@@ -208,14 +227,15 @@ extension LoginViewController {
     private func setupLayout() {
         self.view.addSubviews(
             loginLabel,
-            idTextField,
-            pwTextField,
+            textfieldStackView,
+            inValidEmailLabel,
             loginButton,
             labelStackView,
             accountLabel,
             createNicknameButton
         )
         
+        textfieldStackView.addArrangedSubviews(idTextField, inValidEmailLabel, pwTextField)
         labelStackView.addArrangedSubviews(findIdLabel, divider, findPwLabel)
         buttonStackView.addArrangedSubviews(pwClearButton, maskButton)
         
@@ -224,20 +244,21 @@ extension LoginViewController {
             $0.centerX.equalToSuperview()
         }
         
-        idTextField.snp.makeConstraints {
+        textfieldStackView.snp.makeConstraints {
             $0.top.equalTo(loginLabel.snp.bottom).offset(31)
-            $0.height.equalTo(52)
             $0.horizontalEdges.equalToSuperview().inset(20)
+        }
+        
+        idTextField.snp.makeConstraints {
+            $0.height.equalTo(52)
         }
         
         pwTextField.snp.makeConstraints {
-            $0.top.equalTo(idTextField.snp.bottom).offset(7)
             $0.height.equalTo(52)
-            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(pwTextField.snp.bottom).offset(21)
+            $0.top.equalTo(textfieldStackView.snp.bottom).offset(21)
             $0.height.equalTo(52)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
@@ -259,9 +280,20 @@ extension LoginViewController {
         }
     }
     
+    private func isValidEmail(forEmail: String?) -> (Bool) {
+        guard forEmail != nil else { return false }
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let pred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return pred.evaluate(with: forEmail)
+    }
+    
     @objc func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.tvingGray2.cgColor
+        if textField == idTextField {
+            inValidEmailLabel.isHidden = true
+        }
     }
     
     @objc func textFieldDidEndEditing(_ textField: UITextField) {
@@ -293,6 +325,8 @@ extension LoginViewController {
         case 1:
             idTextField.text = ""
             isIdTextEmpty = true
+            idTextField.layer.borderWidth = 0
+            inValidEmailLabel.isHidden = true
         case 2:
             pwTextField.text = ""
             isPwTextEmpty = true
@@ -304,7 +338,15 @@ extension LoginViewController {
     
     @objc func loginButtonTapped() {
         let welcomViewController = WelcomeViewController()
-        welcomViewController.id = idTextField.text
-        navigationController?.pushViewController(welcomViewController, animated: true)
+        
+        let idText = idTextField.text
+        if isValidEmail(forEmail: idText) {
+            welcomViewController.id = idText
+            navigationController?.pushViewController(welcomViewController, animated: true)
+        } else {
+            inValidEmailLabel.isHidden = false
+            idTextField.layer.borderWidth = 1
+            idTextField.layer.borderColor = UIColor.tvingRed.cgColor
+        }
     }
 }
