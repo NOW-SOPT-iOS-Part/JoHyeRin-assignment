@@ -72,8 +72,3 @@ extension WelcomeViewController {
         }
     }
 }
-
-//
-//#Preview {
-//    WelcomeViewController()
-//}

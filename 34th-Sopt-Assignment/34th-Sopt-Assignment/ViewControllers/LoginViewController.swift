@@ -14,6 +14,8 @@ final class LoginViewController: UIViewController {
         didSet {
             if isIdTextEmpty {
                 idClearButton.isHidden = true
+                idTextField.layer.borderWidth = 0
+                invalidEmailLabel.isHidden = true
             } else {
                 idClearButton.isHidden = false
             }
@@ -139,7 +141,7 @@ final class LoginViewController: UIViewController {
         return stackView
     }()
     
-    private let inValidEmailLabel: UILabel = {
+    private let invalidEmailLabel: UILabel = {
         let label = UILabel()
         label.text = "올바르지 않은 형식의 이메일입니다!"
         label.textColor = .tvingRed
@@ -205,11 +207,12 @@ final class LoginViewController: UIViewController {
         return label
     }()
     
-    private lazy var createNicknameButton: UIButton = {
+    private lazy var createNickNameButton: UIButton = {
         let button = UIButton()
         button.setButtonText(forText: "닉네임 만들러가기", forfont: .pretendardFont(weight: 400, size: 14))
         button.underlineTitle(forTitle: button.titleLabel?.text ?? "")
         button.setTitleColor(.tvingGray2, for: .normal)
+        button.addTarget(self, action: #selector(createNickNameButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -228,14 +231,14 @@ extension LoginViewController {
         self.view.addSubviews(
             loginLabel,
             textfieldStackView,
-            inValidEmailLabel,
+            invalidEmailLabel,
             loginButton,
             labelStackView,
             accountLabel,
-            createNicknameButton
+            createNickNameButton
         )
         
-        textfieldStackView.addArrangedSubviews(idTextField, inValidEmailLabel, pwTextField)
+        textfieldStackView.addArrangedSubviews(idTextField, invalidEmailLabel, pwTextField)
         labelStackView.addArrangedSubviews(findIdLabel, divider, findPwLabel)
         buttonStackView.addArrangedSubviews(pwClearButton, maskButton)
         
@@ -273,7 +276,7 @@ extension LoginViewController {
             $0.leading.equalTo(labelStackView.snp.leading).offset(-35)
         }
         
-        createNicknameButton.snp.makeConstraints {
+        createNickNameButton.snp.makeConstraints {
             $0.top.equalTo(labelStackView.snp.bottom).offset(28)
             $0.trailing.equalTo(labelStackView.snp.trailing).offset(35)
             $0.height.equalTo(accountLabel.snp.height)
@@ -292,7 +295,7 @@ extension LoginViewController {
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.tvingGray2.cgColor
         if textField == idTextField {
-            inValidEmailLabel.isHidden = true
+            invalidEmailLabel.isHidden = true
         }
     }
     
@@ -325,8 +328,6 @@ extension LoginViewController {
         case 1:
             idTextField.text = ""
             isIdTextEmpty = true
-            idTextField.layer.borderWidth = 0
-            inValidEmailLabel.isHidden = true
         case 2:
             pwTextField.text = ""
             isPwTextEmpty = true
@@ -344,9 +345,19 @@ extension LoginViewController {
             welcomViewController.id = idText
             navigationController?.pushViewController(welcomViewController, animated: true)
         } else {
-            inValidEmailLabel.isHidden = false
+            invalidEmailLabel.isHidden = false
             idTextField.layer.borderWidth = 1
             idTextField.layer.borderColor = UIColor.tvingRed.cgColor
         }
+    }
+    
+    @objc func createNickNameButtonTapped() {
+        let nickNameModalViewController = NickNameModalViewController()
+        
+        if let sheet = nickNameModalViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        
+        self.present(nickNameModalViewController, animated: true)
     }
 }
