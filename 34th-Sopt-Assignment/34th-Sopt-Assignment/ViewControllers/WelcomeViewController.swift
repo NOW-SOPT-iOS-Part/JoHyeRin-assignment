@@ -27,6 +27,7 @@ final class WelcomeViewController: UIViewController {
         let button = UIButton()
         button.setButton(forBackgroundColor: .tvingRed, forCornerRadius: 3)
         button.setButtonText(forText: "메인으로", forfont: .pretendardFont(weight: 600, size: 14), forfontColor: .white)
+        button.addTarget(self, action: #selector(gotoMainButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -70,5 +71,9 @@ extension WelcomeViewController {
         if let id {
             welcomeLabel.text = "\(id)님\n반가워요!!"
         }
+    }
+    
+    @objc func gotoMainButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

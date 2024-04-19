@@ -10,6 +10,9 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
     
+    var setNickNameFlag = false
+    var nickNameText = ""
+    
     private lazy var isIdTextEmpty: Bool = true {
         didSet {
             if isIdTextEmpty {
@@ -59,6 +62,7 @@ final class LoginViewController: UIViewController {
         textField.setPlaceholder(placeholder: "아이디", fontColor: .tvingGray2, font: .pretendardFont(weight: 600, size: 15))
         textField.setTextFont(forFont: .pretendardFont(weight: 600, size: 15), forFontColor: .tvingGray2)
         textField.addPadding(left: 17)
+        textField.autocapitalizationType = .none
         textField.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
         textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEnd)
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -342,7 +346,11 @@ extension LoginViewController {
         
         let idText = idTextField.text
         if isValidEmail(forEmail: idText) {
-            welcomViewController.id = idText
+            if setNickNameFlag {
+                welcomViewController.id = nickNameText
+            }else {
+                welcomViewController.id = idText
+            }
             navigationController?.pushViewController(welcomViewController, animated: true)
         } else {
             invalidEmailLabel.isHidden = false
@@ -353,11 +361,23 @@ extension LoginViewController {
     
     @objc func createNickNameButtonTapped() {
         let nickNameModalViewController = NickNameModalViewController()
-        
+        nickNameModalViewController.delegate = self
         if let sheet = nickNameModalViewController.sheetPresentationController {
             sheet.detents = [.medium()]
         }
         
         self.present(nickNameModalViewController, animated: true)
+    }
+}
+
+extension LoginViewController: nickNameProtocol {
+    func setupNickName(nickname: String?, isComplete: Bool?) {
+        if let nickname {
+            nickNameText = nickname
+        }
+        
+        if let isComplete {
+            setNickNameFlag = isComplete
+        }
     }
 }

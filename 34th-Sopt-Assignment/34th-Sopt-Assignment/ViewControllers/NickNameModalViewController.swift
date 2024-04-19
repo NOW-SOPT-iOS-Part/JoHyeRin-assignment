@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol nickNameProtocol: AnyObject {
+    func setupNickName(nickname: String?, isComplete: Bool?)
+}
+
 final class NickNameModalViewController: UIViewController {
+    
+    weak var delegate: nickNameProtocol?
     
     private lazy var isNickNameTextEmpty: Bool = true {
         didSet {
@@ -161,12 +167,14 @@ extension NickNameModalViewController {
     
     @objc func saveButtonTapped() {
         let nickText = nickNameTextField.text
+        let setNickNameFlag = true
         if isValidNickName(forNickName: nickText) {
-            
+            delegate?.setupNickName(nickname: nickText, isComplete: setNickNameFlag)
         } else {
             invalidNickLabel.isHidden = false
             nickNameTextField.layer.borderWidth = 1
             nickNameTextField.layer.borderColor = UIColor.tvingRed.cgColor
         }
+        self.dismiss(animated: true)
     }
 }
