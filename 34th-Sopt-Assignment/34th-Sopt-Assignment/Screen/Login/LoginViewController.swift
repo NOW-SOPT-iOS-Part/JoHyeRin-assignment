@@ -296,8 +296,7 @@ extension LoginViewController {
     }
     
     @objc func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.tvingGray2.cgColor
+        textField.makeBorder(width: 1, color: .tvingGray2)
         if textField == idTextField {
             invalidEmailLabel.isHidden = true
         }
@@ -328,15 +327,12 @@ extension LoginViewController {
     }
     
     @objc func clearButtonTapped(_ button: UIButton) {
-        switch button.tag {
-        case 1:
+        if button == idClearButton {
             idTextField.text = ""
             isIdTextEmpty = true
-        case 2:
+        } else {
             pwTextField.text = ""
             isPwTextEmpty = true
-        default:
-            break
         }
         loginButton.setButton(forBackgroundColor: .black, forBorderColor: .tvingGray4, forBorderWidth: 1, forCornerRadius: 1)
     }
@@ -354,8 +350,7 @@ extension LoginViewController {
             navigationController?.pushViewController(welcomViewController, animated: true)
         } else {
             invalidEmailLabel.isHidden = false
-            idTextField.layer.borderWidth = 1
-            idTextField.layer.borderColor = UIColor.tvingRed.cgColor
+            idTextField.makeBorder(width: 1, color: .tvingRed)
         }
     }
     
