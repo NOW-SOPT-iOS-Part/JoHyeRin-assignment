@@ -149,8 +149,7 @@ extension NickNameModalViewController {
                 saveButton.backgroundColor = .tvingRed
             } else {
                 invalidNickLabel.isHidden = false
-                nickNameTextField.layer.borderWidth = 1
-                nickNameTextField.layer.borderColor = UIColor.tvingRed.cgColor
+                nickNameTextField.makeBorder(width: 1, color: .tvingRed)
                 saveButton.isEnabled = false
                 saveButton.backgroundColor = .tvingGray3
                 saveButton.titleLabel?.textColor = .white
@@ -172,8 +171,7 @@ extension NickNameModalViewController {
             delegate?.setupNickName(nickname: nickText, isComplete: setNickNameFlag)
         } else {
             invalidNickLabel.isHidden = false
-            nickNameTextField.layer.borderWidth = 1
-            nickNameTextField.layer.borderColor = UIColor.tvingRed.cgColor
+            nickNameTextField.makeBorder(width: 1, color: .tvingRed)
         }
         self.dismiss(animated: true)
     }

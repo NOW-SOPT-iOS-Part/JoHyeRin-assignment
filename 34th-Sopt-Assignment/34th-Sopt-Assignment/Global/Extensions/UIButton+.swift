@@ -13,18 +13,12 @@ extension UIButton {
         self.clipsToBounds = true
         self.backgroundColor = forBackgroundColor
         
-        if let forBorderColor {
-            layer.borderColor = forBorderColor.cgColor
+        if let forBorderColor, let forBorderWidth {
+            self.makeBorder(width: forBorderWidth, color: forBorderColor)
         }
         
-        if let forBorderWidth {
-            self.layer.borderWidth = forBorderWidth
-        }
-        
-        if let cornerRadius = forCornerRadius {
-            self.layer.cornerRadius = cornerRadius
-        }  else {
-            self.layer.cornerRadius = 0
+        if let forCornerRadius {
+            self.makeCornerRound(radius: forCornerRadius)
         }
     }
     
