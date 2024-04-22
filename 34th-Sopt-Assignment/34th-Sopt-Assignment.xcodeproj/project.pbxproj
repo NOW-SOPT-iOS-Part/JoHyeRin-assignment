@@ -88,6 +88,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D00E65D82BD6EA3400DDC325 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0A544792BC1BCC800E7F102 /* Fonts */,
+				D0A544692BC1B97800E7F102 /* Assets.xcassets */,
+				D0A544662BC1B97500E7F102 /* Main.storyboard */,
+				D0A5446B2BC1B97800E7F102 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D00E65D92BD6EA8E00DDC325 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D0A544602BC1B97500E7F102 /* AppDelegate.swift */,
+				D0A544622BC1B97500E7F102 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D00E65DA2BD6EA9E00DDC325 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D0A544642BC1B97500E7F102 /* ViewController.swift */,
+				D00E65DD2BD6EAE700DDC325 /* Welcome */,
+				D00E65E02BD6EB5600DDC325 /* NickName */,
+				D00E65DC2BD6EADA00DDC325 /* Login */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		D00E65DB2BD6EAC700DDC325 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				D0A5448C2BC7C24000E7F102 /* Extensions */,
+				D00E65D82BD6EA3400DDC325 /* Resources */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		D00E65DC2BD6EADA00DDC325 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D0A544902BC7C84900E7F102 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D00E65DD2BD6EAE700DDC325 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				D0A5449E2BCB040C00E7F102 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		D00E65E02BD6EB5600DDC325 /* NickName */ = {
+			isa = PBXGroup;
+			children = (
+				D00C2BB92BD170D000CD66D0 /* NickNameModalViewController.swift */,
+			);
+			path = NickName;
+			sourceTree = "<group>";
+		};
 		D0A544542BC1B97500E7F102 = {
 			isa = PBXGroup;
 			children = (
@@ -107,15 +171,9 @@
 		D0A5445F2BC1B97500E7F102 /* 34th-Sopt-Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				D0A544602BC1B97500E7F102 /* AppDelegate.swift */,
-				D0A544622BC1B97500E7F102 /* SceneDelegate.swift */,
-				D0A544642BC1B97500E7F102 /* ViewController.swift */,
-				D0A544792BC1BCC800E7F102 /* Fonts */,
-				D0A5448C2BC7C24000E7F102 /* Extensions */,
-				D0A5448F2BC7C82700E7F102 /* ViewControllers */,
-				D0A544662BC1B97500E7F102 /* Main.storyboard */,
-				D0A544692BC1B97800E7F102 /* Assets.xcassets */,
-				D0A5446B2BC1B97800E7F102 /* LaunchScreen.storyboard */,
+				D00E65D92BD6EA8E00DDC325 /* Application */,
+				D00E65DB2BD6EAC700DDC325 /* Global */,
+				D00E65DA2BD6EA9E00DDC325 /* Screen */,
 				D0A5446E2BC1B97800E7F102 /* Info.plist */,
 			);
 			path = "34th-Sopt-Assignment";
@@ -148,16 +206,6 @@
 				D07799122BCD7AF10016083D /* UIViewController+.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D0A5448F2BC7C82700E7F102 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				D0A544902BC7C84900E7F102 /* LoginViewController.swift */,
-				D0A5449E2BCB040C00E7F102 /* WelcomeViewController.swift */,
-				D00C2BB92BD170D000CD66D0 /* NickNameModalViewController.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -393,6 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
