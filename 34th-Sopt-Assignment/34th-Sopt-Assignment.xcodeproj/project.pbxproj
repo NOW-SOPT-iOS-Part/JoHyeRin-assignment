@@ -7,17 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00C2BBA2BD170D000CD66D0 /* NickNameModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00C2BB92BD170D000CD66D0 /* NickNameModalViewController.swift */; };
+		D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07799122BCD7AF10016083D /* UIViewController+.swift */; };
 		D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544602BC1B97500E7F102 /* AppDelegate.swift */; };
 		D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544622BC1B97500E7F102 /* SceneDelegate.swift */; };
 		D0A544652BC1B97500E7F102 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544642BC1B97500E7F102 /* ViewController.swift */; };
 		D0A544682BC1B97500E7F102 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D0A544672BC1B97500E7F102 /* Base */; };
 		D0A5446A2BC1B97800E7F102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A544692BC1B97800E7F102 /* Assets.xcassets */; };
 		D0A5446D2BC1B97800E7F102 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D0A5446C2BC1B97800E7F102 /* Base */; };
-		D0A544762BC1BA2400E7F102 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D0A544752BC1BA2400E7F102 /* SnapKit */; };
-		D0A544782BC1BA2400E7F102 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D0A544772BC1BA2400E7F102 /* SnapKit-Dynamic */; };
+		D0A544832BC1BCF400E7F102 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A5447A2BC1BCF300E7F102 /* Pretendard-ExtraLight.otf */; };
+		D0A544842BC1BCF400E7F102 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A5447B2BC1BCF300E7F102 /* Pretendard-ExtraBold.otf */; };
+		D0A544852BC1BCF400E7F102 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A5447C2BC1BCF300E7F102 /* Pretendard-SemiBold.otf */; };
+		D0A544862BC1BCF400E7F102 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A5447D2BC1BCF300E7F102 /* Pretendard-Thin.otf */; };
+		D0A544872BC1BCF400E7F102 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A5447E2BC1BCF300E7F102 /* Pretendard-Black.otf */; };
+		D0A544882BC1BCF400E7F102 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A5447F2BC1BCF300E7F102 /* Pretendard-Regular.otf */; };
+		D0A544892BC1BCF400E7F102 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544802BC1BCF300E7F102 /* Pretendard-Light.otf */; };
+		D0A5448A2BC1BCF400E7F102 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544812BC1BCF300E7F102 /* Pretendard-Medium.otf */; };
+		D0A5448B2BC1BCF400E7F102 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */; };
+		D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A5448D2BC7C26700E7F102 /* UIView+.swift */; };
+		D0A544912BC7C84900E7F102 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544902BC7C84900E7F102 /* LoginViewController.swift */; };
+		D0A544932BC7CA6000E7F102 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544922BC7CA6000E7F102 /* UIFont+.swift */; };
+		D0A544952BC7CE1F00E7F102 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544942BC7CE1E00E7F102 /* UITextField+.swift */; };
+		D0A544972BC7D21900E7F102 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544962BC7D21800E7F102 /* UIButton+.swift */; };
+		D0A544992BC7DA0500E7F102 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544982BC7DA0500E7F102 /* UIStackView+.swift */; };
+		D0A5449F2BCB040C00E7F102 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A5449E2BCB040C00E7F102 /* WelcomeViewController.swift */; };
+		D0E6FC8B2BCB1E6E004D7C86 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D0E6FC8A2BCB1E6E004D7C86 /* SnapKit */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D0E6FC882BCB1DE7004D7C86 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D00C2BB92BD170D000CD66D0 /* NickNameModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameModalViewController.swift; sourceTree = "<group>"; };
+		D07799122BCD7AF10016083D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		D0A5445D2BC1B97500E7F102 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A544602BC1B97500E7F102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0A544622BC1B97500E7F102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +58,22 @@
 		D0A544692BC1B97800E7F102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0A5446C2BC1B97800E7F102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0A5446E2BC1B97800E7F102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A5447A2BC1BCF300E7F102 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		D0A5447B2BC1BCF300E7F102 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		D0A5447C2BC1BCF300E7F102 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		D0A5447D2BC1BCF300E7F102 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		D0A5447E2BC1BCF300E7F102 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		D0A5447F2BC1BCF300E7F102 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		D0A544802BC1BCF300E7F102 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		D0A544812BC1BCF300E7F102 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		D0A5448D2BC7C26700E7F102 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		D0A544902BC7C84900E7F102 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D0A544922BC7CA6000E7F102 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		D0A544942BC7CE1E00E7F102 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		D0A544962BC7D21800E7F102 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		D0A544982BC7DA0500E7F102 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		D0A5449E2BCB040C00E7F102 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,8 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A544762BC1BA2400E7F102 /* SnapKit in Frameworks */,
-				D0A544782BC1BA2400E7F102 /* SnapKit-Dynamic in Frameworks */,
+				D0E6FC8B2BCB1E6E004D7C86 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +110,54 @@
 				D0A544602BC1B97500E7F102 /* AppDelegate.swift */,
 				D0A544622BC1B97500E7F102 /* SceneDelegate.swift */,
 				D0A544642BC1B97500E7F102 /* ViewController.swift */,
+				D0A544792BC1BCC800E7F102 /* Fonts */,
+				D0A5448C2BC7C24000E7F102 /* Extensions */,
+				D0A5448F2BC7C82700E7F102 /* ViewControllers */,
 				D0A544662BC1B97500E7F102 /* Main.storyboard */,
 				D0A544692BC1B97800E7F102 /* Assets.xcassets */,
 				D0A5446B2BC1B97800E7F102 /* LaunchScreen.storyboard */,
 				D0A5446E2BC1B97800E7F102 /* Info.plist */,
 			);
 			path = "34th-Sopt-Assignment";
+			sourceTree = "<group>";
+		};
+		D0A544792BC1BCC800E7F102 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D0A5447E2BC1BCF300E7F102 /* Pretendard-Black.otf */,
+				D0A544822BC1BCF300E7F102 /* Pretendard-Bold.otf */,
+				D0A5447B2BC1BCF300E7F102 /* Pretendard-ExtraBold.otf */,
+				D0A5447A2BC1BCF300E7F102 /* Pretendard-ExtraLight.otf */,
+				D0A544802BC1BCF300E7F102 /* Pretendard-Light.otf */,
+				D0A544812BC1BCF300E7F102 /* Pretendard-Medium.otf */,
+				D0A5447F2BC1BCF300E7F102 /* Pretendard-Regular.otf */,
+				D0A5447C2BC1BCF300E7F102 /* Pretendard-SemiBold.otf */,
+				D0A5447D2BC1BCF300E7F102 /* Pretendard-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D0A5448C2BC7C24000E7F102 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0A5448D2BC7C26700E7F102 /* UIView+.swift */,
+				D0A544922BC7CA6000E7F102 /* UIFont+.swift */,
+				D0A544942BC7CE1E00E7F102 /* UITextField+.swift */,
+				D0A544962BC7D21800E7F102 /* UIButton+.swift */,
+				D0A544982BC7DA0500E7F102 /* UIStackView+.swift */,
+				D07799122BCD7AF10016083D /* UIViewController+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0A5448F2BC7C82700E7F102 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0A544902BC7C84900E7F102 /* LoginViewController.swift */,
+				D0A5449E2BCB040C00E7F102 /* WelcomeViewController.swift */,
+				D00C2BB92BD170D000CD66D0 /* NickNameModalViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +170,7 @@
 				D0A544592BC1B97500E7F102 /* Sources */,
 				D0A5445A2BC1B97500E7F102 /* Frameworks */,
 				D0A5445B2BC1B97500E7F102 /* Resources */,
+				D0E6FC882BCB1DE7004D7C86 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -88,8 +178,7 @@
 			);
 			name = "34th-Sopt-Assignment";
 			packageProductDependencies = (
-				D0A544752BC1BA2400E7F102 /* SnapKit */,
-				D0A544772BC1BA2400E7F102 /* SnapKit-Dynamic */,
+				D0E6FC8A2BCB1E6E004D7C86 /* SnapKit */,
 			);
 			productName = "34th-Sopt-Assignment";
 			productReference = D0A5445D2BC1B97500E7F102 /* 34th-Sopt-Assignment.app */;
@@ -120,7 +209,7 @@
 			);
 			mainGroup = D0A544542BC1B97500E7F102;
 			packageReferences = (
-				D0A544742BC1BA2400E7F102 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D0E6FC892BCB1E6E004D7C86 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = D0A5445E2BC1B97500E7F102 /* Products */;
 			projectDirPath = "";
@@ -137,8 +226,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A5446A2BC1B97800E7F102 /* Assets.xcassets in Resources */,
+				D0A5448B2BC1BCF400E7F102 /* Pretendard-Bold.otf in Resources */,
 				D0A5446D2BC1B97800E7F102 /* Base in Resources */,
+				D0A544862BC1BCF400E7F102 /* Pretendard-Thin.otf in Resources */,
+				D0A544892BC1BCF400E7F102 /* Pretendard-Light.otf in Resources */,
+				D0A544842BC1BCF400E7F102 /* Pretendard-ExtraBold.otf in Resources */,
+				D0A544882BC1BCF400E7F102 /* Pretendard-Regular.otf in Resources */,
+				D0A544852BC1BCF400E7F102 /* Pretendard-SemiBold.otf in Resources */,
+				D0A544832BC1BCF400E7F102 /* Pretendard-ExtraLight.otf in Resources */,
+				D0A544872BC1BCF400E7F102 /* Pretendard-Black.otf in Resources */,
 				D0A544682BC1B97500E7F102 /* Base in Resources */,
+				D0A5448A2BC1BCF400E7F102 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +247,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A544912BC7C84900E7F102 /* LoginViewController.swift in Sources */,
+				D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */,
+				D0A544952BC7CE1F00E7F102 /* UITextField+.swift in Sources */,
+				D0A5449F2BCB040C00E7F102 /* WelcomeViewController.swift in Sources */,
+				D00C2BBA2BD170D000CD66D0 /* NickNameModalViewController.swift in Sources */,
 				D0A544652BC1B97500E7F102 /* ViewController.swift in Sources */,
 				D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */,
+				D0A544932BC7CA6000E7F102 /* UIFont+.swift in Sources */,
 				D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */,
+				D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */,
+				D0A544992BC7DA0500E7F102 /* UIStackView+.swift in Sources */,
+				D0A544972BC7D21900E7F102 /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +483,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D0A544742BC1BA2400E7F102 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		D0E6FC892BCB1E6E004D7C86 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -387,15 +494,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D0A544752BC1BA2400E7F102 /* SnapKit */ = {
+		D0E6FC8A2BCB1E6E004D7C86 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D0A544742BC1BA2400E7F102 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = D0E6FC892BCB1E6E004D7C86 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		D0A544772BC1BA2400E7F102 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D0A544742BC1BA2400E7F102 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
