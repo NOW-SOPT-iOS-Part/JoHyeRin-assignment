@@ -12,6 +12,9 @@
 		D00E65F42BD86BED00DDC325 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D00E65F32BD86BED00DDC325 /* Then */; };
 		D00E65F62BD923DC00DDC325 /* NickNameModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E65F52BD923DC00DDC325 /* NickNameModalView.swift */; };
 		D00E65F82BD92D2100DDC325 /* WelecomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E65F72BD92D2100DDC325 /* WelecomeView.swift */; };
+		D00E65FB2BD9357200DDC325 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E65FA2BD9357200DDC325 /* MainView.swift */; };
+		D00E65FD2BD9358200DDC325 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E65FC2BD9358200DDC325 /* MainViewController.swift */; };
+		D00E66022BD97B5D00DDC325 /* TabbarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E66012BD97B5D00DDC325 /* TabbarCollectionViewCell.swift */; };
 		D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07799122BCD7AF10016083D /* UIViewController+.swift */; };
 		D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544602BC1B97500E7F102 /* AppDelegate.swift */; };
 		D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544622BC1B97500E7F102 /* SceneDelegate.swift */; };
@@ -56,6 +59,9 @@
 		D00E65F02BD86BC100DDC325 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D00E65F52BD923DC00DDC325 /* NickNameModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameModalView.swift; sourceTree = "<group>"; };
 		D00E65F72BD92D2100DDC325 /* WelecomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelecomeView.swift; sourceTree = "<group>"; };
+		D00E65FA2BD9357200DDC325 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D00E65FC2BD9358200DDC325 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D00E66012BD97B5D00DDC325 /* TabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		D07799122BCD7AF10016083D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		D0A5445D2BC1B97500E7F102 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A544602BC1B97500E7F102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				D00E65DC2BD6EADA00DDC325 /* Login */,
 				D00E65E02BD6EB5600DDC325 /* NickName */,
 				D00E65DD2BD6EAE700DDC325 /* Welcome */,
+				D00E65F92BD9355800DDC325 /* Main */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -161,6 +168,24 @@
 				D00E65F52BD923DC00DDC325 /* NickNameModalView.swift */,
 			);
 			path = NickName;
+			sourceTree = "<group>";
+		};
+		D00E65F92BD9355800DDC325 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D00E66002BD9772900DDC325 /* TabbarCollectionView */,
+				D00E65FA2BD9357200DDC325 /* MainView.swift */,
+				D00E65FC2BD9358200DDC325 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D00E66002BD9772900DDC325 /* TabbarCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D00E66012BD97B5D00DDC325 /* TabbarCollectionViewCell.swift */,
+			);
+			path = TabbarCollectionView;
 			sourceTree = "<group>";
 		};
 		D0A544542BC1B97500E7F102 = {
@@ -315,8 +340,11 @@
 				D00C2BBA2BD170D000CD66D0 /* NickNameModalViewController.swift in Sources */,
 				D00E65F82BD92D2100DDC325 /* WelecomeView.swift in Sources */,
 				D0A544652BC1B97500E7F102 /* ViewController.swift in Sources */,
+				D00E66022BD97B5D00DDC325 /* TabbarCollectionViewCell.swift in Sources */,
+				D00E65FD2BD9358200DDC325 /* MainViewController.swift in Sources */,
 				D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */,
 				D0A544932BC7CA6000E7F102 /* UIFont+.swift in Sources */,
+				D00E65FB2BD9357200DDC325 /* MainView.swift in Sources */,
 				D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */,
 				D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */,
 				D00E65F62BD923DC00DDC325 /* NickNameModalView.swift in Sources */,
