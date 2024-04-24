@@ -47,6 +47,8 @@ extension WelcomeViewController {
         }
     }
     
+    //MARK: - Objc Method
+    
     @objc func gotoMainButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }

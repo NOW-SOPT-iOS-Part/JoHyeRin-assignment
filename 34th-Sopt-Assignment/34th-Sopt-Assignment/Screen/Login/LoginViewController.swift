@@ -57,6 +57,8 @@ extension LoginViewController {
         return pred.evaluate(with: forEmail)
     }
     
+    //MARK: - Objc Method
+    
     @objc func maskButtonTapped() {
         rootView.isMaskButtonSelected.toggle()
     }

@@ -13,7 +13,7 @@ final class WelecomeView: UIView {
     
     //MARK: - UI Properties
     
-    private let logoImage = UIImageView(image: UIImage(named: "tvingLogo"))
+    private let logoImage = UIImageView(image: .tvingLogo)
     private let welcomeLabel = UILabel()
     let goToMainButton = UIButton()
     

@@ -57,6 +57,8 @@ extension NickNameModalViewController {
         return pred.evaluate(with: forNickName)
     }
     
+    //MARK: - Objc Method
+    
     @objc func clearButtonTapped(_ button: UIButton) {
         rootView.clearTextField()
         rootView.updateLoginButtonEnable(isEnable: false)
