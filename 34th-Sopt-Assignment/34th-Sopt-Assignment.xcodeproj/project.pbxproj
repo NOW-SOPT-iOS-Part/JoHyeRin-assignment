@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D00C2BBA2BD170D000CD66D0 /* NickNameModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00C2BB92BD170D000CD66D0 /* NickNameModalViewController.swift */; };
+		D00E65F12BD86BC100DDC325 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E65F02BD86BC100DDC325 /* LoginView.swift */; };
+		D00E65F42BD86BED00DDC325 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D00E65F32BD86BED00DDC325 /* Then */; };
+		D00E65F62BD923DC00DDC325 /* NickNameModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E65F52BD923DC00DDC325 /* NickNameModalView.swift */; };
+		D00E65F82BD92D2100DDC325 /* WelecomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E65F72BD92D2100DDC325 /* WelecomeView.swift */; };
 		D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07799122BCD7AF10016083D /* UIViewController+.swift */; };
 		D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544602BC1B97500E7F102 /* AppDelegate.swift */; };
 		D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544622BC1B97500E7F102 /* SceneDelegate.swift */; };
@@ -49,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		D00C2BB92BD170D000CD66D0 /* NickNameModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameModalViewController.swift; sourceTree = "<group>"; };
+		D00E65F02BD86BC100DDC325 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D00E65F52BD923DC00DDC325 /* NickNameModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameModalView.swift; sourceTree = "<group>"; };
+		D00E65F72BD92D2100DDC325 /* WelecomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelecomeView.swift; sourceTree = "<group>"; };
 		D07799122BCD7AF10016083D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		D0A5445D2BC1B97500E7F102 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A544602BC1B97500E7F102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E6FC8B2BCB1E6E004D7C86 /* SnapKit in Frameworks */,
+				D00E65F42BD86BED00DDC325 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A544902BC7C84900E7F102 /* LoginViewController.swift */,
+				D00E65F02BD86BC100DDC325 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -140,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A5449E2BCB040C00E7F102 /* WelcomeViewController.swift */,
+				D00E65F72BD92D2100DDC325 /* WelecomeView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -148,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				D00C2BB92BD170D000CD66D0 /* NickNameModalViewController.swift */,
+				D00E65F52BD923DC00DDC325 /* NickNameModalView.swift */,
 			);
 			path = NickName;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 			name = "34th-Sopt-Assignment";
 			packageProductDependencies = (
 				D0E6FC8A2BCB1E6E004D7C86 /* SnapKit */,
+				D00E65F32BD86BED00DDC325 /* Then */,
 			);
 			productName = "34th-Sopt-Assignment";
 			productReference = D0A5445D2BC1B97500E7F102 /* 34th-Sopt-Assignment.app */;
@@ -258,6 +270,7 @@
 			mainGroup = D0A544542BC1B97500E7F102;
 			packageReferences = (
 				D0E6FC892BCB1E6E004D7C86 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D00E65F22BD86BED00DDC325 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = D0A5445E2BC1B97500E7F102 /* Products */;
 			projectDirPath = "";
@@ -300,11 +313,14 @@
 				D0A544952BC7CE1F00E7F102 /* UITextField+.swift in Sources */,
 				D0A5449F2BCB040C00E7F102 /* WelcomeViewController.swift in Sources */,
 				D00C2BBA2BD170D000CD66D0 /* NickNameModalViewController.swift in Sources */,
+				D00E65F82BD92D2100DDC325 /* WelecomeView.swift in Sources */,
 				D0A544652BC1B97500E7F102 /* ViewController.swift in Sources */,
 				D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */,
 				D0A544932BC7CA6000E7F102 /* UIFont+.swift in Sources */,
 				D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */,
 				D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */,
+				D00E65F62BD923DC00DDC325 /* NickNameModalView.swift in Sources */,
+				D00E65F12BD86BC100DDC325 /* LoginView.swift in Sources */,
 				D0A544992BC7DA0500E7F102 /* UIStackView+.swift in Sources */,
 				D0A544972BC7D21900E7F102 /* UIButton+.swift in Sources */,
 			);
@@ -533,6 +549,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D00E65F22BD86BED00DDC325 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		D0E6FC892BCB1E6E004D7C86 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -544,6 +568,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D00E65F32BD86BED00DDC325 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D00E65F22BD86BED00DDC325 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
 		D0E6FC8A2BCB1E6E004D7C86 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D0E6FC892BCB1E6E004D7C86 /* XCRemoteSwiftPackageReference "SnapKit" */;

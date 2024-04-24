@@ -27,7 +27,7 @@ extension UIButton {
         self.titleLabel?.font = forfont
         
         if let forfontColor {
-            self.titleLabel?.textColor = forfontColor
+            self.setTitleColor(forfontColor, for: .normal)
         }
     }
     
