@@ -8,11 +8,11 @@
 import UIKit
 import Then
 
-final class TabbarCollectionViewCell: UICollectionViewCell {
+final class TopTabbarCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Properties
     
-    static let identifier = "tabbarCollectionViewCell"
+    static let identifier = "topTabbarCollectionViewCell"
     
     //MARK: - UI Properties
     
@@ -32,7 +32,7 @@ final class TabbarCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension TabbarCollectionViewCell {
+extension TopTabbarCollectionViewCell {
     
     // MARK: - Privat Method
     
