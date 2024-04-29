@@ -15,22 +15,21 @@ final class MainView: UIView {
     
     private var presentCellIndexPath: IndexPath = [0, 0]
     
-    lazy var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-    
-    private lazy var vc1 = UIViewController()
+    private lazy var homeVC = HomeViewController()
     private lazy var liveVC = LiveViewController()
     private lazy var tvVC = TvProgramViewController()
     private lazy var movieVC = MovieViewController()
     private lazy var pmVC = ParamountViewController()
-    lazy var tabViewControllers = [vc1, liveVC, tvVC, movieVC, pmVC]
+    lazy var tabViewControllers = [homeVC, liveVC, tvVC, movieVC, pmVC]
     
     //MARK: - UI Properties
     
     private let logoImageView = UIImageView(image: .tvingLabelLogo)
     private let profileImageView = UIImageView(image: .profile)
-    private let topTabbarCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    let topTabbarCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     private let dividerView = UIView()
     private let indicatorView = UIView()
+    lazy var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     // MARK: - Life Cycle
     
@@ -94,16 +93,23 @@ extension MainView {
             topTabbarCollectionView,
             dividerView
         )
+        
         dividerView.addSubview(indicatorView)
         
+        pageViewController.view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+            $0.height.greaterThanOrEqualToSuperview().priority(.low)
+        }
+        
         logoImageView.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(58)
-            $0.leading.equalTo(self.safeAreaLayoutGuide).inset(11)
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(53)
+            $0.leading.equalToSuperview().inset(11)
         }
         
         profileImageView.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(55)
-            $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(9)
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(50)
+            $0.trailing.equalToSuperview().inset(9)
         }
         
         topTabbarCollectionView.snp.makeConstraints {
@@ -119,7 +125,7 @@ extension MainView {
         }
         
         indicatorView.snp.makeConstraints {
-            $0.leading.equalTo(self.safeAreaLayoutGuide).inset(18)
+            $0.leading.equalToSuperview().inset(18)
             $0.centerY.equalTo(dividerView.snp.centerY)
             $0.height.equalTo(3)
             $0.width.equalTo(15)
@@ -128,7 +134,6 @@ extension MainView {
         pageViewController.view.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
-        
     }
     
     //MARK: - Method
@@ -137,10 +142,6 @@ extension MainView {
         viewController.addChild(pageViewController)
         pageViewController.dataSource = viewController as? UIPageViewControllerDataSource
         pageViewController.delegate = viewController as? UIPageViewControllerDelegate
-    }
-    
-    func didMovePageViewController(_ viewController: UIViewController) {
-        pageViewController.didMove(toParent: viewController)
     }
     
     func setupCollectionView(_ viewController: UIViewController) {
@@ -183,6 +184,7 @@ extension MainView {
     func fetchCellforIndex(index: Int) {
         if let tabCell = topTabbarCollectionView.dequeueReusableCell(withReuseIdentifier: TopTabbarCollectionViewCell.identifier, for: [0, index]) as? TopTabbarCollectionViewCell {
             moveIndicatorView(forCell: tabCell)
+            presentCellIndexPath = [0, index]
         }
     }
 }

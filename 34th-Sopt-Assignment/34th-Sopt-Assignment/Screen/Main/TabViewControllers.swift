@@ -17,7 +17,8 @@ final class LiveViewController: UIViewController {
         
         image.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200)
-            $0.leading.bottom.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.height.equalTo(600)
         }
     }
 }
@@ -32,7 +33,8 @@ final class TvProgramViewController: UIViewController {
         
         image.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200)
-            $0.leading.bottom.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.height.equalTo(600)
         }
     }
 }
@@ -47,7 +49,8 @@ final class MovieViewController: UIViewController {
         
         image.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200)
-            $0.leading.bottom.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.height.equalTo(600)
         }
     }
 }
@@ -62,7 +65,8 @@ final class ParamountViewController: UIViewController {
         
         image.snp.makeConstraints {
             $0.top.equalToSuperview().inset(200)
-            $0.leading.bottom.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.height.equalTo(600)
         }
     }
 }
