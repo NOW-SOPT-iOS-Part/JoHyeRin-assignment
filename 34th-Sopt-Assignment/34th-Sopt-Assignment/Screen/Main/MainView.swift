@@ -22,13 +22,15 @@ final class MainView: UIView {
     private lazy var pmVC = ParamountViewController()
     lazy var tabViewControllers = [homeVC, liveVC, tvVC, movieVC, pmVC]
     
+    private let tabName = ["홈", "실시간", "TV프로그램", "영화", "파라마운트+"]
+    
     //MARK: - UI Properties
     
     private let logoImageView = UIImageView(image: .tvingLabelLogo)
     private let profileImageView = UIImageView(image: .profile)
     let topTabbarCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     private let dividerView = UIView()
-    private let indicatorView = UIView()
+    let indicatorView = UIView()
     lazy var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     // MARK: - Life Cycle
@@ -47,15 +49,6 @@ final class MainView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "contentOffset" {
-            if let newOffset = change?[.newKey] as? CGPoint {
-                // 콜렉션뷰의 스크롤 오프셋을 이용하여 UIView의 프레임을 업데이트
-                dividerView.frame.origin.x = -(newOffset.x)
-            }
-        }
-    }
 }
 
 extension MainView {
@@ -69,10 +62,9 @@ extension MainView {
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             
-            $0.collectionViewLayout = flowLayout
+            $0.collectionViewLayout = createCollectionViewLayout()
             $0.backgroundColor = .clear
             $0.register(TopTabbarCollectionViewCell.self, forCellWithReuseIdentifier: TopTabbarCollectionViewCell.identifier)
-            $0.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
         }
         
         dividerView.do {
@@ -91,10 +83,9 @@ extension MainView {
             logoImageView,
             profileImageView,
             topTabbarCollectionView,
-            dividerView
+            dividerView,
+            indicatorView
         )
-        
-        dividerView.addSubview(indicatorView)
         
         pageViewController.view.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -134,6 +125,56 @@ extension MainView {
         pageViewController.view.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    private func createTopTabbarLayout() -> NSCollectionLayoutSection {
+        var tabbarInterItemSpacing = self.bounds.size.width - 36.0
+        var item: [NSCollectionLayoutItem] = []
+        
+        for i in 0..<tabName.count {
+            let itemWidth = tabName[i].size(withAttributes: [NSAttributedString.Key.font: UIFont.pretendardFont(weight: 400, size: 17)]).width
+            
+            tabbarInterItemSpacing -= itemWidth
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(itemWidth), heightDimension: .absolute(37))
+            item.append(NSCollectionLayoutItem(layoutSize: itemSize))
+        }
+        
+        tabbarInterItemSpacing /= Double(tabName.count - 1)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(37))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: item)
+        group.interItemSpacing = .fixed(tabbarInterItemSpacing)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 18, bottom: 0, trailing: 18)
+        section.orthogonalScrollingBehavior = .continuous
+        
+        return section
+    }
+    
+    private func createDefaultLayout() -> NSCollectionLayoutSection {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+    
+    private func createCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+        let layout = UICollectionViewCompositionalLayout { [weak self] sectionNumber, env -> NSCollectionLayoutSection? in
+            switch sectionNumber {
+            case 0:
+                return self?.createTopTabbarLayout()
+            default:
+                return self?.createDefaultLayout()
+            }
+        }
+        return layout
     }
     
     //MARK: - Method

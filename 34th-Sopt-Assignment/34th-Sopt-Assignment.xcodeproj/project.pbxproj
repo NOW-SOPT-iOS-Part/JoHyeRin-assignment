@@ -22,8 +22,10 @@
 		D03905A82BDB01FE001E1B41 /* HomeCollectionViewLiveChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03905A72BDB01FD001E1B41 /* HomeCollectionViewLiveChannelCell.swift */; };
 		D03905AF2BDB04FF001E1B41 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03905AE2BDB04FF001E1B41 /* ContentModel.swift */; };
 		D03905B12BDB06E0001E1B41 /* LiveChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03905B02BDB06E0001E1B41 /* LiveChannelModel.swift */; };
-		D03905B32BDB14F2001E1B41 /* HomeCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03905B22BDB14F2001E1B41 /* HomeCollectionHeaderView.swift */; };
 		D03905B52BDB1AA1001E1B41 /* HomeCollectionViewPagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03905B42BDB1AA1001E1B41 /* HomeCollectionViewPagingCell.swift */; };
+		D039060B2BE0221B001E1B41 /* HomeCollectionPagingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039060A2BE0221B001E1B41 /* HomeCollectionPagingFooterView.swift */; };
+		D039060D2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039060C2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift */; };
+		D039060F2BE02DC1001E1B41 /* HomeCollectionViewAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039060E2BE02DC1001E1B41 /* HomeCollectionViewAdCell.swift */; };
 		D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07799122BCD7AF10016083D /* UIViewController+.swift */; };
 		D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544602BC1B97500E7F102 /* AppDelegate.swift */; };
 		D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544622BC1B97500E7F102 /* SceneDelegate.swift */; };
@@ -78,8 +80,10 @@
 		D03905A72BDB01FD001E1B41 /* HomeCollectionViewLiveChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewLiveChannelCell.swift; sourceTree = "<group>"; };
 		D03905AE2BDB04FF001E1B41 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		D03905B02BDB06E0001E1B41 /* LiveChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelModel.swift; sourceTree = "<group>"; };
-		D03905B22BDB14F2001E1B41 /* HomeCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionHeaderView.swift; sourceTree = "<group>"; };
 		D03905B42BDB1AA1001E1B41 /* HomeCollectionViewPagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewPagingCell.swift; sourceTree = "<group>"; };
+		D039060A2BE0221B001E1B41 /* HomeCollectionPagingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionPagingFooterView.swift; sourceTree = "<group>"; };
+		D039060C2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionContentsHeaderView.swift; sourceTree = "<group>"; };
+		D039060E2BE02DC1001E1B41 /* HomeCollectionViewAdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewAdCell.swift; sourceTree = "<group>"; };
 		D07799122BCD7AF10016083D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		D0A5445D2BC1B97500E7F102 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A544602BC1B97500E7F102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -221,10 +225,12 @@
 		D03905A42BDB00E1001E1B41 /* HomeCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				D039060C2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift */,
+				D039060A2BE0221B001E1B41 /* HomeCollectionPagingFooterView.swift */,
+				D03905B42BDB1AA1001E1B41 /* HomeCollectionViewPagingCell.swift */,
 				D03905A52BDB00FA001E1B41 /* HomeCollectionViewContentCell.swift */,
 				D03905A72BDB01FD001E1B41 /* HomeCollectionViewLiveChannelCell.swift */,
-				D03905B22BDB14F2001E1B41 /* HomeCollectionHeaderView.swift */,
-				D03905B42BDB1AA1001E1B41 /* HomeCollectionViewPagingCell.swift */,
+				D039060E2BE02DC1001E1B41 /* HomeCollectionViewAdCell.swift */,
 			);
 			path = HomeCollectionView;
 			sourceTree = "<group>";
@@ -403,9 +409,12 @@
 				D039059E2BDAC8E5001E1B41 /* TabViewControllers.swift in Sources */,
 				D0A544912BC7C84900E7F102 /* LoginViewController.swift in Sources */,
 				D0A5448E2BC7C26700E7F102 /* UIView+.swift in Sources */,
+				D039060F2BE02DC1001E1B41 /* HomeCollectionViewAdCell.swift in Sources */,
 				D0A544952BC7CE1F00E7F102 /* UITextField+.swift in Sources */,
+				D039060B2BE0221B001E1B41 /* HomeCollectionPagingFooterView.swift in Sources */,
 				D03905B52BDB1AA1001E1B41 /* HomeCollectionViewPagingCell.swift in Sources */,
 				D0A5449F2BCB040C00E7F102 /* WelcomeViewController.swift in Sources */,
+				D039060D2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift in Sources */,
 				D00C2BBA2BD170D000CD66D0 /* NickNameModalViewController.swift in Sources */,
 				D00E65F82BD92D2100DDC325 /* WelecomeView.swift in Sources */,
 				D0A544652BC1B97500E7F102 /* ViewController.swift in Sources */,
@@ -421,7 +430,6 @@
 				D00E65F62BD923DC00DDC325 /* NickNameModalView.swift in Sources */,
 				D03905B12BDB06E0001E1B41 /* LiveChannelModel.swift in Sources */,
 				D03905A62BDB00FA001E1B41 /* HomeCollectionViewContentCell.swift in Sources */,
-				D03905B32BDB14F2001E1B41 /* HomeCollectionHeaderView.swift in Sources */,
 				D00E65F12BD86BC100DDC325 /* LoginView.swift in Sources */,
 				D0A544992BC7DA0500E7F102 /* UIStackView+.swift in Sources */,
 				D03905A82BDB01FE001E1B41 /* HomeCollectionViewLiveChannelCell.swift in Sources */,

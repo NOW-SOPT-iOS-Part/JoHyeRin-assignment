@@ -12,7 +12,7 @@ final class HomeCollectionContentsHeaderView: UICollectionReusableView {
     
     // MARK: - Properties
     
-    static let identifier = "homeCollectionHeader"
+    static let identifier = "homeCollectionContentsHeaderView"
     
     // MARK: - UI Properties
     
@@ -61,11 +61,11 @@ extension HomeCollectionContentsHeaderView {
         )
         
         titleLabel.snp.makeConstraints {
-            $0.top.leading.centerY.equalToSuperview()
+            $0.leading.centerY.equalToSuperview()
         }
         
         viewAllLabel.snp.makeConstraints {
-            $0.top.trailing.centerY.equalToSuperview()
+            $0.trailing.centerY.equalToSuperview()
         }
     }
     

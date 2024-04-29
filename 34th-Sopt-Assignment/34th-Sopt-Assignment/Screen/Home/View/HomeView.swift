@@ -43,7 +43,9 @@ extension HomeView {
             $0.register(HomeCollectionViewPagingCell.self, forCellWithReuseIdentifier: HomeCollectionViewPagingCell.identifier)
             $0.register(HomeCollectionViewContentCell.self, forCellWithReuseIdentifier: HomeCollectionViewContentCell.identifier)
             $0.register(HomeCollectionViewLiveChannelCell.self, forCellWithReuseIdentifier: HomeCollectionViewLiveChannelCell.identifier)
+            $0.register(HomeCollectionViewAdCell.self, forCellWithReuseIdentifier: HomeCollectionViewAdCell.identifier)
             $0.register(HomeCollectionContentsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,withReuseIdentifier:HomeCollectionContentsHeaderView.identifier)
+            $0.register(HomeCollectionPagingFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionPagingFooterView.identifier)
         }
         
     }
@@ -56,7 +58,7 @@ extension HomeView {
         }
     }
     
-    private func createPagingSection() -> NSCollectionLayoutSection {
+    private func createPagingLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
@@ -67,6 +69,10 @@ extension HomeView {
         section.orthogonalScrollingBehavior = .groupPaging
         
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(30))
+        let footerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottomLeading)
+        section.boundarySupplementaryItems = [footerElement]
         
         return section
     }
@@ -111,6 +117,21 @@ extension HomeView {
         return section
     }
     
+    private func createAdLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(120))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPaging
+        
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        return section
+    }
+    
     private func createDefaultLayout() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
@@ -127,12 +148,16 @@ extension HomeView {
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionNumber, env -> NSCollectionLayoutSection? in
             switch sectionNumber {
             case 0:
-                return self?.createPagingSection()
+                return self?.createPagingLayout()
             case 1:
                 return self?.createContentLayout()
             case 2:
                 return self?.createLiveChannelLayout()
             case 3:
+                return self?.createContentLayout()
+            case 4:
+                return self?.createAdLayout()
+            case 5:
                 return self?.createContentLayout()
             default:
                 return self?.createDefaultLayout()
