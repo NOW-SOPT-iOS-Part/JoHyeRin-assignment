@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol stickyDelegate: AnyObject {
+    func updateCollectionViewFrame(offsetY: CGFloat?)
+}
+
 final class HomeViewController: UIViewController {
     
     //MARK: - Properties
+    
+    weak var delegate: stickyDelegate?
     
     private let rootView = HomeView()
     private let contentPageList: [UIImage] = [.yourname, .yourname1, .yourname2, .yourname3, .yourname, .yourname1, .yourname2, .yourname3]
@@ -135,14 +141,14 @@ extension HomeViewController: UICollectionViewDataSource {
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.identifier, for: indexPath) as? HomeCollectionContentsHeaderView else {
                 return UICollectionReusableView()
             }
-            headerView.configureHeader(fortitle: "1화 무료! 파라마운트+ 인기 시리즈")
+            headerView.configureHeader(fortitle: "과제 어려워🤮🤮🤮🤮🤮🤮")
             
             return headerView
         case 5:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.identifier, for: indexPath) as? HomeCollectionContentsHeaderView else {
                 return UICollectionReusableView()
             }
-            headerView.configureHeader(fortitle: "마술보다 더 신비로운 영화(신비로운 영화사전님)")
+            headerView.configureHeader(fortitle: "그래도 해냄🥵🥵🥵🥵🥵🥵")
             
             return headerView
         default: return UICollectionReusableView()
@@ -159,5 +165,11 @@ extension HomeViewController: UICollectionViewDelegate {
                 footer.setupPageIndex(forIndex: currentPageIndex)
             }
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        
+        delegate?.updateCollectionViewFrame(offsetY: offsetY)
     }
 }

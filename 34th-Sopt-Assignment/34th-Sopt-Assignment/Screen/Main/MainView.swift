@@ -14,21 +14,23 @@ final class MainView: UIView {
     //MARK: - Properties
     
     private var presentCellIndexPath: IndexPath = [0, 0]
+    private let tabName = ["홈", "실시간", "TV프로그램", "영화", "파라마운트+"]
     
-    private lazy var homeVC = HomeViewController()
+    private let homeVC = HomeViewController()
     private lazy var liveVC = LiveViewController()
     private lazy var tvVC = TvProgramViewController()
     private lazy var movieVC = MovieViewController()
     private lazy var pmVC = ParamountViewController()
     lazy var tabViewControllers = [homeVC, liveVC, tvVC, movieVC, pmVC]
     
-    private let tabName = ["홈", "실시간", "TV프로그램", "영화", "파라마운트+"]
-    
     //MARK: - UI Properties
     
+    let logoView = UIView()
     private let logoImageView = UIImageView(image: .tvingLabelLogo)
     private let profileImageView = UIImageView(image: .profile)
-    let topTabbarCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    let topTabbarView = UIView()
+    let blackView = UIView()
+    private let topTabbarCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     private let dividerView = UIView()
     let indicatorView = UIView()
     lazy var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -67,6 +69,18 @@ extension MainView {
             $0.register(TopTabbarCollectionViewCell.self, forCellWithReuseIdentifier: TopTabbarCollectionViewCell.identifier)
         }
         
+        logoView.do {
+            $0.backgroundColor = .clear
+        }
+        
+        topTabbarView.do {
+            $0.backgroundColor = .clear
+        }
+        
+        blackView.do {
+            $0.backgroundColor = .black
+        }
+        
         dividerView.do {
             $0.backgroundColor = .tvingGray4
         }
@@ -80,10 +94,20 @@ extension MainView {
     private func setupLayout() {
         self.addSubviews(
             pageViewController.view,
+            blackView,
+            logoView,
+            topTabbarView
+        )
+        
+        logoView.addSubviews(
             logoImageView,
-            profileImageView,
+            profileImageView
+        )
+        
+        blackView.addSubview(dividerView)
+        
+        topTabbarView.addSubviews(
             topTabbarCollectionView,
-            dividerView,
             indicatorView
         )
         
@@ -93,18 +117,34 @@ extension MainView {
             $0.height.greaterThanOrEqualToSuperview().priority(.low)
         }
         
+        logoView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            $0.bottom.equalTo(dividerView.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(53)
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(20)
             $0.leading.equalToSuperview().inset(11)
         }
         
         profileImageView.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(50)
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(17)
             $0.trailing.equalToSuperview().inset(9)
         }
         
+        blackView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(dividerView.snp.top)
+        }
+        
+        topTabbarView.snp.makeConstraints {
+            $0.top.equalTo(logoImageView.snp.bottom).offset(16)
+            $0.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            $0.height.equalTo(40)
+        }
+        
         topTabbarCollectionView.snp.makeConstraints {
-            $0.top.equalTo(logoImageView.snp.bottom).offset(15)
+            $0.top.equalToSuperview()
             $0.height.equalTo(37)
             $0.horizontalEdges.equalToSuperview()
         }
@@ -188,6 +228,10 @@ extension MainView {
     func setupCollectionView(_ viewController: UIViewController) {
         topTabbarCollectionView.delegate = viewController as? UICollectionViewDelegate
         topTabbarCollectionView.dataSource = viewController as? UICollectionViewDataSource
+    }
+    
+    func setupStickyDelegate(_ viewController: UIViewController) {
+        homeVC.delegate = viewController as? any stickyDelegate
     }
     
     func moveIndicatorView(forCell: UICollectionViewCell) {

@@ -38,6 +38,7 @@ extension MainViewController {
     private func setDelegate() {
         rootView.setupCollectionView(self)
         rootView.setupPageViewController(self)
+        rootView.setupStickyDelegate(self)
     }
 }
 
@@ -100,6 +101,40 @@ extension MainViewController: UIPageViewControllerDataSource, UIPageViewControll
                 if let currentIndex = rootView.tabViewControllers.firstIndex(of: currentViewController) {
                     rootView.fetchCellforIndex(index: currentIndex)
                 }
+            }
+        }
+    }
+}
+
+//MARK: - StickyDelegate
+
+extension MainViewController: stickyDelegate {
+    func updateCollectionViewFrame(offsetY: CGFloat?) {
+        if let offsetY {
+            rootView.logoView.frame.origin.y = -offsetY
+            if offsetY > 2 {
+                rootView.topTabbarView.frame.origin.y = 59
+                rootView.blackView.frame.origin.y = -61
+            } else {
+                rootView.topTabbarView.frame.origin.y = -offsetY + 61
+                rootView.blackView.frame.origin.y = -offsetY - 60
+            }
+            
+            let startOffset = CGFloat(-59)
+            let finishOffset = CGFloat(0)
+            
+            if offsetY <= finishOffset && offsetY >= startOffset {
+                let alphaRange = CGFloat(1) - CGFloat(0)
+                let offsetRange = finishOffset - startOffset
+                
+                let offsetFraction = (offsetY - startOffset) / offsetRange //현재 offset에 대한 alpha 비율
+                let alpha = CGFloat(0) + (alphaRange * offsetFraction) //alpha 구하기
+                
+                rootView.blackView.alpha = alpha
+            } else if offsetY < startOffset {
+                rootView.blackView.alpha = 0
+            } else if offsetY > finishOffset {
+                rootView.blackView.alpha = 1
             }
         }
     }
