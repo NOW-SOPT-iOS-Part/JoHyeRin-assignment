@@ -64,8 +64,9 @@ extension MainView {
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             
-            $0.collectionViewLayout = createCollectionViewLayout()
+            $0.collectionViewLayout = flowLayout
             $0.backgroundColor = .clear
+            $0.showsHorizontalScrollIndicator = false
             $0.register(TopTabbarCollectionViewCell.self, forCellWithReuseIdentifier: TopTabbarCollectionViewCell.identifier)
         }
         
@@ -165,56 +166,6 @@ extension MainView {
         pageViewController.view.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
-    }
-    
-    private func createTopTabbarLayout() -> NSCollectionLayoutSection {
-        var tabbarInterItemSpacing = self.bounds.size.width - 36.0
-        var item: [NSCollectionLayoutItem] = []
-        
-        for i in 0..<tabName.count {
-            let itemWidth = tabName[i].size(withAttributes: [NSAttributedString.Key.font: UIFont.pretendardFont(weight: 400, size: 17)]).width
-            
-            tabbarInterItemSpacing -= itemWidth
-            
-            let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(itemWidth), heightDimension: .absolute(37))
-            item.append(NSCollectionLayoutItem(layoutSize: itemSize))
-        }
-        
-        tabbarInterItemSpacing /= Double(tabName.count - 1)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(37))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: item)
-        group.interItemSpacing = .fixed(tabbarInterItemSpacing)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 18, bottom: 0, trailing: 18)
-        section.orthogonalScrollingBehavior = .continuous
-        
-        return section
-    }
-    
-    private func createDefaultLayout() -> NSCollectionLayoutSection {
-        
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        return section
-    }
-    
-    private func createCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout { [weak self] sectionNumber, env -> NSCollectionLayoutSection? in
-            switch sectionNumber {
-            case 0:
-                return self?.createTopTabbarLayout()
-            default:
-                return self?.createDefaultLayout()
-            }
-        }
-        return layout
     }
     
     //MARK: - Method

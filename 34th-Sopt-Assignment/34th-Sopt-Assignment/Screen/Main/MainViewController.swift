@@ -62,7 +62,20 @@ extension MainViewController: UICollectionViewDataSource {
 
 //MARK: - CollectionViewDelegateFlowLayout
 
-extension MainViewController: UICollectionViewDelegate {
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let tabName = tabData[indexPath.item]
+        let cellSize = tabName.size(withAttributes: [NSAttributedString.Key.font: UIFont.pretendardFont(weight: 400, size: 17)])
+        return CGSize(width: cellSize.width, height: 37)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 28
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let selectedCell = collectionView.dequeueReusableCell(withReuseIdentifier: TopTabbarCollectionViewCell.identifier, for: indexPath) as? TopTabbarCollectionViewCell {
             rootView.moveIndicatorView(forCell: selectedCell)
