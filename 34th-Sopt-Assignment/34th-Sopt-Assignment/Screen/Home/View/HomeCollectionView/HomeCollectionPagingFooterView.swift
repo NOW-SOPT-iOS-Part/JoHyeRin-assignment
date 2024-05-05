@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 final class HomeCollectionPagingFooterView: UICollectionReusableView {
@@ -23,6 +24,7 @@ final class HomeCollectionPagingFooterView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
     }
@@ -46,12 +48,14 @@ extension HomeCollectionPagingFooterView {
             $0.preferredIndicatorImage = UIImage(resource: .pageIndicator)
         }
     }
-
-    private func setupLayout() {
+    
+    private func setupHierarchy() {
         self.addSubviews(
             pageControll
         )
-        
+    }
+
+    private func setupLayout() {
         pageControll.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(-15)

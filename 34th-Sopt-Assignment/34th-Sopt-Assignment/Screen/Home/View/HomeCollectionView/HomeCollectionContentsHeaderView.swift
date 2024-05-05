@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 final class HomeCollectionContentsHeaderView: UICollectionReusableView {
@@ -25,6 +26,7 @@ final class HomeCollectionContentsHeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
     }
@@ -53,13 +55,15 @@ extension HomeCollectionContentsHeaderView {
             $0.textAlignment = .center
         }
     }
-
-    private func setupLayout() {
+    
+    private func setupHierarchy() {
         self.addSubviews(
             titleLabel,
             viewAllLabel
         )
-        
+    }
+
+    private func setupLayout() {
         titleLabel.snp.makeConstraints {
             $0.leading.centerY.equalToSuperview()
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -27,11 +28,7 @@ final class LoginView: UIView {
     
     var isPwTextEmpty: Bool = true {
         didSet {
-            if isPwTextEmpty {
-                pwClearButton.alpha = 0
-            } else {
-                pwClearButton.alpha = 100
-            }
+            pwClearButton.alpha = isPwTextEmpty ? 0 : 1
         }
     }
     
@@ -72,6 +69,7 @@ final class LoginView: UIView {
         super.init(frame: frame)
         
         setupStyle()
+        setupHierarchy()
         setupLayout()
     }
     
@@ -181,10 +179,6 @@ extension LoginView {
         
         divider.do {
             $0.backgroundColor = .tvingGray4
-            $0.snp.makeConstraints {
-                $0.height.equalTo(12)
-                $0.width.equalTo(1)
-            }
         }
         
         labelStackView.do {
@@ -205,7 +199,7 @@ extension LoginView {
         }
     }
     
-    private func setupLayout() {
+    private func setupHierarchy() {
         self.addSubviews(
             loginLabel,
             textfieldStackView,
@@ -216,10 +210,25 @@ extension LoginView {
             createNickNameButton
         )
         
-        textfieldStackView.addArrangedSubviews(idTextField, invalidEmailLabel, pwTextField)
-        labelStackView.addArrangedSubviews(findIdLabel, divider, findPwLabel)
-        buttonStackView.addArrangedSubviews(pwClearButton, maskButton)
+        textfieldStackView.addArrangedSubviews(
+            idTextField,
+            invalidEmailLabel,
+            pwTextField
+        )
         
+        labelStackView.addArrangedSubviews(
+            findIdLabel,
+            divider,
+            findPwLabel
+        )
+        
+        buttonStackView.addArrangedSubviews(
+            pwClearButton,
+            maskButton
+        )
+    }
+    
+    private func setupLayout() {
         loginLabel.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(50)
             $0.centerX.equalToSuperview()
@@ -247,6 +256,11 @@ extension LoginView {
         labelStackView.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(31)
             $0.centerX.equalToSuperview()
+        }
+        
+        divider.snp.makeConstraints {
+            $0.height.equalTo(12)
+            $0.width.equalTo(1)
         }
         
         accountLabel.snp.makeConstraints {

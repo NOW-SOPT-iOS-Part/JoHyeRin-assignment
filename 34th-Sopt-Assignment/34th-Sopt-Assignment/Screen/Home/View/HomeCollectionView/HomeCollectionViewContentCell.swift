@@ -6,6 +6,8 @@
 //
 
 import UIKit
+
+import SnapKit
 import Then
 
 final class HomeCollectionViewContentCell: UICollectionViewCell {
@@ -24,6 +26,7 @@ final class HomeCollectionViewContentCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
     }
@@ -35,7 +38,7 @@ final class HomeCollectionViewContentCell: UICollectionViewCell {
 
 extension HomeCollectionViewContentCell {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         posterImage.do {
@@ -49,12 +52,14 @@ extension HomeCollectionViewContentCell {
         }
     }
     
-    private func setupLayout() {
+    private func setupHierarchy() {
         self.addSubviews(
             posterImage,
             contentLabel
         )
-        
+    }
+    
+    private func setupLayout() {
         posterImage.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
             $0.height.equalTo(146)
@@ -71,6 +76,6 @@ extension HomeCollectionViewContentCell {
     
     func configureCell(forContent: ContentModel) {
         posterImage.image = forContent.posterImage
-        contentLabel.text = forContent.contentLabel
+        contentLabel.text = forContent.content
     }
 }

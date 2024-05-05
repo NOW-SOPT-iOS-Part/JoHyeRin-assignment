@@ -23,6 +23,7 @@ final class TopTabbarCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
     }
@@ -45,11 +46,13 @@ extension TopTabbarCollectionViewCell {
         }
     }
     
-    private func setupLayout() {
+    private func setupHierarchy() {
         self.addSubviews(
             tabLabel
         )
-        
+    }
+    
+    private func setupLayout() {
         tabLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }

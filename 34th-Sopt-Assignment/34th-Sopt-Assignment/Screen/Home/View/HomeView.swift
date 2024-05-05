@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -21,6 +22,7 @@ final class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
     }
@@ -47,12 +49,13 @@ extension HomeView {
             $0.register(HomeCollectionContentsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,withReuseIdentifier:HomeCollectionContentsHeaderView.identifier)
             $0.register(HomeCollectionPagingFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionPagingFooterView.identifier)
         }
-        
+    }
+    
+    private func setupHierarchy() {
+        self.addSubview(homeCollectionView)
     }
     
     private func setupLayout() {
-        self.addSubviews(homeCollectionView)
-        
         homeCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -149,16 +152,12 @@ extension HomeView {
             switch sectionNumber {
             case 0:
                 return self?.createPagingLayout()
-            case 1:
+            case 1, 3, 5:
                 return self?.createContentLayout()
             case 2:
                 return self?.createLiveChannelLayout()
-            case 3:
-                return self?.createContentLayout()
             case 4:
                 return self?.createAdLayout()
-            case 5:
-                return self?.createContentLayout()
             default:
                 return self?.createDefaultLayout()
             }

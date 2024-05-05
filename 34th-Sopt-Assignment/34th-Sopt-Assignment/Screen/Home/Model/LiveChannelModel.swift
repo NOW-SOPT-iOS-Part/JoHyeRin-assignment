@@ -9,16 +9,16 @@ import UIKit
 
 struct LiveChannelModel {
     let preViewColor: UIColor
-    let rankLabel: String
-    let channelLabel: String
-    let programLabel: String
-    let percentLabel: String
+    let rank: String
+    let channel: String
+    let program: String
+    let percent: String
 }
 
 extension LiveChannelModel {
     static let liveChannelList: [LiveChannelModel] = [
-        LiveChannelModel(preViewColor: .red, rankLabel: "1", channelLabel: "Mnet", programLabel: "보이즈 플래닛 12화", percentLabel: "80.0%"),
-        LiveChannelModel(preViewColor: .green, rankLabel: "2", channelLabel: "Channel A", programLabel: "하트시그널 4화", percentLabel: "67.3%"),
-        LiveChannelModel(preViewColor: .blue, rankLabel: "3", channelLabel: "tvN", programLabel: "눈물의여왕 15화", percentLabel: "51.5%")
+        LiveChannelModel(preViewColor: .red, rank: "1", channel: "Mnet", program: "보이즈 플래닛 12화", percent: "80.0%"),
+        LiveChannelModel(preViewColor: .green, rank: "2", channel: "Channel A", program: "하트시그널 4화", percent: "67.3%"),
+        LiveChannelModel(preViewColor: .blue, rank: "3", channel: "tvN", program: "눈물의여왕 15화", percent: "51.5%")
     ]
 }

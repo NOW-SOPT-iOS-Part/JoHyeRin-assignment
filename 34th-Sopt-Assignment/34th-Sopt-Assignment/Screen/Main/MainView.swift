@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -40,6 +41,7 @@ final class MainView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
         
@@ -91,8 +93,7 @@ extension MainView {
         }
     }
     
-    
-    private func setupLayout() {
+    private func setupHierarchy() {
         self.addSubviews(
             pageViewController.view,
             blackView,
@@ -111,7 +112,9 @@ extension MainView {
             topTabbarCollectionView,
             indicatorView
         )
-        
+    }
+    
+    private func setupLayout() {
         pageViewController.view.snp.makeConstraints {
             $0.edges.equalToSuperview()
             $0.width.equalToSuperview()

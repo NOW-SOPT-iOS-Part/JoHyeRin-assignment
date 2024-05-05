@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -37,6 +38,7 @@ final class NickNameModalView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
     }
@@ -94,14 +96,16 @@ extension NickNameModalView {
         }
     }
     
-    private func setupLayout() {
+    private func setupHierarchy() {
         self.addSubviews(
             nickNameLabel,
             nickNameTextField,
             invalidNickLabel,
             saveButton
         )
-        
+    }
+    
+    private func setupLayout() {
         nickNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(45)
             $0.leading.equalToSuperview().inset(20)

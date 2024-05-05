@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 protocol nickNameProtocol: AnyObject {
     func setupNickName(nickname: String?, isComplete: Bool?)

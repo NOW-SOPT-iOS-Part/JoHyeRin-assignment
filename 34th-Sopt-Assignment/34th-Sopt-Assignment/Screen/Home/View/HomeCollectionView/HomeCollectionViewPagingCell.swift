@@ -6,6 +6,8 @@
 //
 
 import UIKit
+
+import SnapKit
 import Then
 
 final class HomeCollectionViewPagingCell: UICollectionViewCell {
@@ -23,6 +25,7 @@ final class HomeCollectionViewPagingCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupLayout()
     }
     
@@ -35,11 +38,13 @@ extension HomeCollectionViewPagingCell {
     
     // MARK: - Privat Method
     
-    private func setupLayout() {
+    private func setupHierarchy() {
         self.addSubviews(
             posterImage
         )
-        
+    }
+    
+    private func setupLayout() {
         posterImage.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }

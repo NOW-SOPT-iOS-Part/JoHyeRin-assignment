@@ -6,6 +6,8 @@
 //
 
 import UIKit
+
+import SnapKit
 import Then
 
 final class HomeCollectionViewLiveChannelCell: UICollectionViewCell {
@@ -27,6 +29,7 @@ final class HomeCollectionViewLiveChannelCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
     }
@@ -70,7 +73,7 @@ extension HomeCollectionViewLiveChannelCell {
         }
     }
     
-    private func setupLayout() {
+    private func setupHierarchy() {
         self.addSubviews(
             preView,
             rankLabel,
@@ -78,7 +81,9 @@ extension HomeCollectionViewLiveChannelCell {
             programLabel,
             percentLabel
         )
-        
+    }
+    
+    private func setupLayout() {
         preView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
             $0.height.equalTo(80)
@@ -110,9 +115,9 @@ extension HomeCollectionViewLiveChannelCell {
     
     func configureCell(forLiveChannel: LiveChannelModel) {
         preView.backgroundColor = forLiveChannel.preViewColor
-        rankLabel.text = forLiveChannel.rankLabel
-        channelLabel.text = forLiveChannel.channelLabel
-        programLabel.text = forLiveChannel.programLabel
-        percentLabel.text = forLiveChannel.percentLabel
+        rankLabel.text = forLiveChannel.rank
+        channelLabel.text = forLiveChannel.channel
+        programLabel.text = forLiveChannel.program
+        percentLabel.text = forLiveChannel.percent
     }
 }

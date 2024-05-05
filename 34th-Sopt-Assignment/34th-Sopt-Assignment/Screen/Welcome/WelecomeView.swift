@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -22,6 +23,7 @@ final class WelecomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupHierarchy()
         setupStyle()
         setupLayout()
     }
@@ -51,13 +53,15 @@ extension WelecomeView {
         }
     }
     
-    
-    private func setupLayout() {
+    private func setupHierarchy() {
         self.addSubviews(
             logoImage,
             welcomeLabel,
             goToMainButton
         )
+    }
+    
+    private func setupLayout() {
         
         logoImage.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
