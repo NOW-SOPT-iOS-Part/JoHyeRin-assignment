@@ -33,7 +33,7 @@ final class MainViewController: UIViewController {
 
 extension MainViewController {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setDelegate() {
         rootView.setupCollectionView(self)

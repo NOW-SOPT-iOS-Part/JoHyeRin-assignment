@@ -57,7 +57,7 @@ final class MainView: UIView {
 
 extension MainView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         self.backgroundColor = .black

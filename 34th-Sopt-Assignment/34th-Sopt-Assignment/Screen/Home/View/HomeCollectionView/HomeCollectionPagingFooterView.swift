@@ -37,7 +37,7 @@ final class HomeCollectionPagingFooterView: UICollectionReusableView {
 
 extension HomeCollectionPagingFooterView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         pageControll.do {

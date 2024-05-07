@@ -84,11 +84,15 @@ extension MovieViewController {
     }
 }
 
+//MARK: - TableViewDelegate
+
 extension MovieViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
 }
+
+//MARK: - TableViewDataSource
 
 extension MovieViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

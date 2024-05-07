@@ -39,7 +39,7 @@ final class HomeCollectionContentsHeaderView: UICollectionReusableView {
 
 extension HomeCollectionContentsHeaderView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         titleLabel.do {

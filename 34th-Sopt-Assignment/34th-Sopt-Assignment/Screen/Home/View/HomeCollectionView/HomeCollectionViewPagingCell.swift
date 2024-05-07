@@ -36,7 +36,7 @@ final class HomeCollectionViewPagingCell: UICollectionViewCell {
 
 extension HomeCollectionViewPagingCell {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupHierarchy() {
         self.addSubviews(

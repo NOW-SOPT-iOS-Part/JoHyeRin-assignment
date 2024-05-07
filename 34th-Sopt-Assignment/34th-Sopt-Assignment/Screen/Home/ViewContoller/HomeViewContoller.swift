@@ -41,7 +41,7 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setDelegate() {
         rootView.setupCollectionView(self)

@@ -34,7 +34,7 @@ final class HomeView: UIView {
 
 extension HomeView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         self.backgroundColor = .black

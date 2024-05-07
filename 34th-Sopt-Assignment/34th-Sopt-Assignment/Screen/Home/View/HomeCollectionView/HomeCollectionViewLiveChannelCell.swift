@@ -41,7 +41,7 @@ final class HomeCollectionViewLiveChannelCell: UICollectionViewCell {
 
 extension HomeCollectionViewLiveChannelCell {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         preView.do {

@@ -35,7 +35,7 @@ final class TopTabbarCollectionViewCell: UICollectionViewCell {
 
 extension TopTabbarCollectionViewCell {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         tabLabel.do {

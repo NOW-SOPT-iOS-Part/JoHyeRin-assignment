@@ -80,7 +80,7 @@ final class LoginView: UIView {
 
 extension LoginView {
    
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         self.backgroundColor = .black

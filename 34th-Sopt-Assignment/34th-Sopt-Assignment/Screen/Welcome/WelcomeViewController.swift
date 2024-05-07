@@ -34,7 +34,7 @@ final class WelcomeViewController: UIViewController {
 
 extension WelcomeViewController {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setAddTarget() {
         rootView.goToMainButton.addTarget(self, action: #selector(gotoMainButtonTapped), for: .touchUpInside)
