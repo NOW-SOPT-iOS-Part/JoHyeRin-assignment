@@ -39,22 +39,6 @@ final class TvProgramViewController: UIViewController {
     }
 }
 
-final class MovieViewController: UIViewController {
-    let image = UIImageView(image: .movie)
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .black
-        view.addSubview(image)
-        
-        image.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(200)
-            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
-            $0.height.equalTo(600)
-        }
-    }
-}
-
 final class ParamountViewController: UIViewController {
     let image = UIImageView(image: .paramount)
     
