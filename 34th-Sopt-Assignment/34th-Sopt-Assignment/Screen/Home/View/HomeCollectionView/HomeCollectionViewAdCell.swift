@@ -12,10 +12,6 @@ import Then
 
 final class HomeCollectionViewAdCell: UICollectionViewCell {
     
-    //MARK: - Properties
-    
-    static let identifier = "homeCollectionViewAdCell"
-    
     //MARK: - UI Properties
     
     private let posterImage = UIImageView()

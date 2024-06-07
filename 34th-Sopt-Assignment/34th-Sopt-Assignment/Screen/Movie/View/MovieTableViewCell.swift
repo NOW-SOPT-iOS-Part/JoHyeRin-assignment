@@ -12,10 +12,6 @@ import Then
 
 final class MovieTableViewCell: UITableViewCell {
     
-    //MARK: - Properties
-    
-    static let identifier = "movieTableViewCell"
-    
     //MARK: - UI Properties
     
     private let rankLabel = UILabel()

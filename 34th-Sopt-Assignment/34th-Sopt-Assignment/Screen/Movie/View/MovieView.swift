@@ -39,7 +39,7 @@ extension MovieView {
         self.backgroundColor = .black
         
         movieTableView.do {
-            $0.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
+            $0.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.className)
             $0.backgroundColor = .black
         }
     }

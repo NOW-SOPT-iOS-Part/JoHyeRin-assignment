@@ -50,7 +50,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopTabbarCollectionViewCell.identifier, for: indexPath) as? TopTabbarCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopTabbarCollectionViewCell.className, for: indexPath) as? TopTabbarCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.configureCell(forTab: tabData[indexPath.item])
@@ -77,7 +77,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         return 28
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let selectedCell = collectionView.dequeueReusableCell(withReuseIdentifier: TopTabbarCollectionViewCell.identifier, for: indexPath) as? TopTabbarCollectionViewCell {
+        if let selectedCell = collectionView.dequeueReusableCell(withReuseIdentifier: TopTabbarCollectionViewCell.className, for: indexPath) as? TopTabbarCollectionViewCell {
             rootView.moveIndicatorView(forCell: selectedCell)
         }
         rootView.fetchPageViewforIndexPath(indexPath: indexPath)

@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SnapKit
+
 final class LiveViewController: UIViewController {
     let image = UIImageView(image: .live)
     

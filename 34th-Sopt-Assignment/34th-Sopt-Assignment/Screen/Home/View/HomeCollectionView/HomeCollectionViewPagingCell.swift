@@ -12,10 +12,6 @@ import Then
 
 final class HomeCollectionViewPagingCell: UICollectionViewCell {
     
-    //MARK: - Properties
-    
-    static let identifier = "homeCollectionViewPagingCell"
-    
     //MARK: - UI Properties
     
     private let posterImage = UIImageView()
