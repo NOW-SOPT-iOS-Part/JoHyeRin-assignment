@@ -34,6 +34,7 @@
 		D03FAD1D2C12D93E0088955D /* NickNameModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03FAD1C2C12D93E0088955D /* NickNameModalViewModel.swift */; };
 		D03FAD1F2C12D96A0088955D /* NickNameModalViewController_MVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03FAD1E2C12D96A0088955D /* NickNameModalViewController_MVVM.swift */; };
 		D03FAD212C12DEA30088955D /* DailyBoxOfficeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03FAD202C12DEA30088955D /* DailyBoxOfficeResponseDTO.swift */; };
+		D03FAD272C12E9DB0088955D /* CompositionalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03FAD262C12E9DB0088955D /* CompositionalFactory.swift */; };
 		D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07799122BCD7AF10016083D /* UIViewController+.swift */; };
 		D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544602BC1B97500E7F102 /* AppDelegate.swift */; };
 		D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544622BC1B97500E7F102 /* SceneDelegate.swift */; };
@@ -109,6 +110,7 @@
 		D03FAD1C2C12D93E0088955D /* NickNameModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameModalViewModel.swift; sourceTree = "<group>"; };
 		D03FAD1E2C12D96A0088955D /* NickNameModalViewController_MVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameModalViewController_MVVM.swift; sourceTree = "<group>"; };
 		D03FAD202C12DEA30088955D /* DailyBoxOfficeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBoxOfficeResponseDTO.swift; sourceTree = "<group>"; };
+		D03FAD262C12E9DB0088955D /* CompositionalFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalFactory.swift; sourceTree = "<group>"; };
 		D07799122BCD7AF10016083D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		D0A5445D2BC1B97500E7F102 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A544602BC1B97500E7F102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		D039059F2BDADCA1001E1B41 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D03FAD252C12E9BF0088955D /* Component */,
 				D03905AB2BDB04D6001E1B41 /* Model */,
 				D03905AC2BDB04DC001E1B41 /* View */,
 				D03905AD2BDB04E0001E1B41 /* ViewContoller */,
@@ -380,6 +383,14 @@
 				D03FAD202C12DEA30088955D /* DailyBoxOfficeResponseDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		D03FAD252C12E9BF0088955D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				D03FAD262C12E9DB0088955D /* CompositionalFactory.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		D0A544542BC1B97500E7F102 = {
@@ -610,6 +621,7 @@
 				D03FAD1F2C12D96A0088955D /* NickNameModalViewController_MVVM.swift in Sources */,
 				D00E65F12BD86BC100DDC325 /* LoginView.swift in Sources */,
 				D0A544992BC7DA0500E7F102 /* UIStackView+.swift in Sources */,
+				D03FAD272C12E9DB0088955D /* CompositionalFactory.swift in Sources */,
 				D03905A82BDB01FE001E1B41 /* HomeCollectionViewLiveChannelCell.swift in Sources */,
 				D0A544972BC7D21900E7F102 /* UIButton+.swift in Sources */,
 				D0B882C12BE94E0200633FD8 /* BoxOfficeTargetType.swift in Sources */,
