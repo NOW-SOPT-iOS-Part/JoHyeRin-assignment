@@ -11,10 +11,6 @@ import SnapKit
 
 final class HomeCollectionContentsHeaderView: UICollectionReusableView {
     
-    // MARK: - Properties
-    
-    static let identifier = "homeCollectionContentsHeaderView"
-    
     // MARK: - UI Properties
     
     private let titleLabel = UILabel()
@@ -39,7 +35,7 @@ final class HomeCollectionContentsHeaderView: UICollectionReusableView {
 
 extension HomeCollectionContentsHeaderView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         titleLabel.do {

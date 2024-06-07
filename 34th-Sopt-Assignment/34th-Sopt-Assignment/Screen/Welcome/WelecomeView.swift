@@ -35,7 +35,7 @@ final class WelecomeView: UIView {
 
 extension WelecomeView {
    
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         self.backgroundColor = .black

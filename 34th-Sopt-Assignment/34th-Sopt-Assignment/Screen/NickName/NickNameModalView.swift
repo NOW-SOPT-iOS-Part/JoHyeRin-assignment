@@ -49,7 +49,7 @@ final class NickNameModalView: UIView {
 }
 extension NickNameModalView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         self.backgroundColor = .white

@@ -35,7 +35,7 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setAddTarget() {
         rootView.idClearButton.addTarget(self, action: #selector(clearButtonTapped(_:)), for: .touchUpInside)

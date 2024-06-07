@@ -57,7 +57,7 @@ final class MainView: UIView {
 
 extension MainView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         self.backgroundColor = .black
@@ -69,7 +69,7 @@ extension MainView {
             $0.collectionViewLayout = flowLayout
             $0.backgroundColor = .clear
             $0.showsHorizontalScrollIndicator = false
-            $0.register(TopTabbarCollectionViewCell.self, forCellWithReuseIdentifier: TopTabbarCollectionViewCell.identifier)
+            $0.register(TopTabbarCollectionViewCell.self, forCellWithReuseIdentifier: TopTabbarCollectionViewCell.className)
         }
         
         logoView.do {
@@ -221,7 +221,7 @@ extension MainView {
     }
     
     func fetchCellforIndex(index: Int) {
-        if let tabCell = topTabbarCollectionView.dequeueReusableCell(withReuseIdentifier: TopTabbarCollectionViewCell.identifier, for: [0, index]) as? TopTabbarCollectionViewCell {
+        if let tabCell = topTabbarCollectionView.dequeueReusableCell(withReuseIdentifier: TopTabbarCollectionViewCell.className, for: [0, index]) as? TopTabbarCollectionViewCell {
             moveIndicatorView(forCell: tabCell)
             presentCellIndexPath = [0, index]
         }

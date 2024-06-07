@@ -37,7 +37,7 @@ final class NickNameModalViewController: UIViewController {
 
 extension NickNameModalViewController {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setAddTarget() {
         rootView.clearButton.addTarget(self, action: #selector(clearButtonTapped), for: .touchUpInside)

@@ -41,7 +41,7 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setDelegate() {
         rootView.setupCollectionView(self)
@@ -77,37 +77,37 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewPagingCell.identifier, for: indexPath) as? HomeCollectionViewPagingCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewPagingCell.className, for: indexPath) as? HomeCollectionViewPagingCell else {
                 return UICollectionViewCell()
             }
             cell.configureCell(forPage: contentPageList[indexPath.item])
             return cell
         case 1:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewContentCell.identifier, for: indexPath) as? HomeCollectionViewContentCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewContentCell.className, for: indexPath) as? HomeCollectionViewContentCell else {
                 return UICollectionViewCell()
             }
             cell.configureCell(forContent: contentModelList[indexPath.item])
             return cell
         case 2:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewLiveChannelCell.identifier, for: indexPath) as? HomeCollectionViewLiveChannelCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewLiveChannelCell.className, for: indexPath) as? HomeCollectionViewLiveChannelCell else {
                 return UICollectionViewCell()
             }
             cell.configureCell(forLiveChannel: liveChannelModelList[indexPath.item])
             return cell
         case 3:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewContentCell.identifier, for: indexPath) as? HomeCollectionViewContentCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewContentCell.className, for: indexPath) as? HomeCollectionViewContentCell else {
                 return UICollectionViewCell()
             }
             cell.configureCell(forContent: contentModelList[indexPath.item])
             return cell
         case 4:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewAdCell.identifier, for: indexPath) as? HomeCollectionViewAdCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewAdCell.className, for: indexPath) as? HomeCollectionViewAdCell else {
                 return UICollectionViewCell()
             }
             cell.configureCell(forAd: adPageList[indexPath.item])
             return cell
         case 5:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewContentCell.identifier, for: indexPath) as? HomeCollectionViewContentCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewContentCell.className, for: indexPath) as? HomeCollectionViewContentCell else {
                 return UICollectionViewCell()
             }
             cell.configureCell(forContent: contentModelList[indexPath.item])
@@ -119,33 +119,33 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch indexPath.section {
         case 0:
-            guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionPagingFooterView.identifier, for: indexPath) as? HomeCollectionPagingFooterView else {
+            guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionPagingFooterView.className, for: indexPath) as? HomeCollectionPagingFooterView else {
                 return UICollectionReusableView()
             }
             return footerView
         case 1:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.identifier, for: indexPath) as? HomeCollectionContentsHeaderView else {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.className, for: indexPath) as? HomeCollectionContentsHeaderView else {
                 return UICollectionReusableView()
             }
             headerView.configureHeader(fortitle: "티빙에서 꼭 봐야하는 콘텐츠")
             
             return headerView
         case 2:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.identifier, for: indexPath) as? HomeCollectionContentsHeaderView else {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.className, for: indexPath) as? HomeCollectionContentsHeaderView else {
                 return UICollectionReusableView()
             }
             headerView.configureHeader(fortitle: "인기 LIVE 채널")
             
             return headerView
         case 3:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.identifier, for: indexPath) as? HomeCollectionContentsHeaderView else {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.className, for: indexPath) as? HomeCollectionContentsHeaderView else {
                 return UICollectionReusableView()
             }
             headerView.configureHeader(fortitle: "과제 어려워🤮🤮🤮🤮🤮🤮")
             
             return headerView
         case 5:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.identifier, for: indexPath) as? HomeCollectionContentsHeaderView else {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionContentsHeaderView.className, for: indexPath) as? HomeCollectionContentsHeaderView else {
                 return UICollectionReusableView()
             }
             headerView.configureHeader(fortitle: "그래도 해냄🥵🥵🥵🥵🥵🥵")

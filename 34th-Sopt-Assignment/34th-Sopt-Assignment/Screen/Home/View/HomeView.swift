@@ -34,7 +34,7 @@ final class HomeView: UIView {
 
 extension HomeView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         self.backgroundColor = .black
@@ -42,12 +42,12 @@ extension HomeView {
         homeCollectionView.do {
             $0.collectionViewLayout = createCollectionViewLayout()
             $0.backgroundColor = .clear
-            $0.register(HomeCollectionViewPagingCell.self, forCellWithReuseIdentifier: HomeCollectionViewPagingCell.identifier)
-            $0.register(HomeCollectionViewContentCell.self, forCellWithReuseIdentifier: HomeCollectionViewContentCell.identifier)
-            $0.register(HomeCollectionViewLiveChannelCell.self, forCellWithReuseIdentifier: HomeCollectionViewLiveChannelCell.identifier)
-            $0.register(HomeCollectionViewAdCell.self, forCellWithReuseIdentifier: HomeCollectionViewAdCell.identifier)
-            $0.register(HomeCollectionContentsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,withReuseIdentifier:HomeCollectionContentsHeaderView.identifier)
-            $0.register(HomeCollectionPagingFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionPagingFooterView.identifier)
+            $0.register(HomeCollectionViewPagingCell.self, forCellWithReuseIdentifier: HomeCollectionViewPagingCell.className)
+            $0.register(HomeCollectionViewContentCell.self, forCellWithReuseIdentifier: HomeCollectionViewContentCell.className)
+            $0.register(HomeCollectionViewLiveChannelCell.self, forCellWithReuseIdentifier: HomeCollectionViewLiveChannelCell.className)
+            $0.register(HomeCollectionViewAdCell.self, forCellWithReuseIdentifier: HomeCollectionViewAdCell.className)
+            $0.register(HomeCollectionContentsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,withReuseIdentifier:HomeCollectionContentsHeaderView.className)
+            $0.register(HomeCollectionPagingFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionPagingFooterView.className)
         }
     }
     

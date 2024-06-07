@@ -10,10 +10,6 @@ import Then
 
 final class TopTabbarCollectionViewCell: UICollectionViewCell {
     
-    //MARK: - Properties
-    
-    static let identifier = "topTabbarCollectionViewCell"
-    
     //MARK: - UI Properties
     
     private let tabLabel = UILabel()
@@ -35,7 +31,7 @@ final class TopTabbarCollectionViewCell: UICollectionViewCell {
 
 extension TopTabbarCollectionViewCell {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         tabLabel.do {

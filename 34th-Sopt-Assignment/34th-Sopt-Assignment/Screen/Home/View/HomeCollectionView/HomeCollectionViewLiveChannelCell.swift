@@ -12,10 +12,6 @@ import Then
 
 final class HomeCollectionViewLiveChannelCell: UICollectionViewCell {
     
-    //MARK: - Properties
-    
-    static let identifier = "homeCollectionViewLiveChannelCell"
-    
     //MARK: - UI Properties
     
     private let preView = UIView()
@@ -41,7 +37,7 @@ final class HomeCollectionViewLiveChannelCell: UICollectionViewCell {
 
 extension HomeCollectionViewLiveChannelCell {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         preView.do {

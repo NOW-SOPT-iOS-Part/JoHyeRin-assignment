@@ -11,10 +11,6 @@ import SnapKit
 
 final class HomeCollectionPagingFooterView: UICollectionReusableView {
     
-    // MARK: - Properties
-    
-    static let identifier = "homeCollectionPagingFooterView"
-    
     // MARK: - UI Properties
     
     private let pageControll = UIPageControl()
@@ -37,7 +33,7 @@ final class HomeCollectionPagingFooterView: UICollectionReusableView {
 
 extension HomeCollectionPagingFooterView {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupStyle() {
         pageControll.do {

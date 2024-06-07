@@ -12,10 +12,6 @@ import Then
 
 final class HomeCollectionViewAdCell: UICollectionViewCell {
     
-    //MARK: - Properties
-    
-    static let identifier = "homeCollectionViewAdCell"
-    
     //MARK: - UI Properties
     
     private let posterImage = UIImageView()
@@ -36,7 +32,7 @@ final class HomeCollectionViewAdCell: UICollectionViewCell {
 
 extension HomeCollectionViewAdCell {
     
-    // MARK: - Privat Method
+    // MARK: - Private Method
     
     private func setupHierarchy() {
         self.addSubviews(
