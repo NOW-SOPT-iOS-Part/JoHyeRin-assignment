@@ -340,7 +340,7 @@ extension LoginViewController_MVVM {
     }
     
     @objc func createNickNameButtonTapped() {
-        let nickNameModalViewController = NickNameModalViewController()
+        let nickNameModalViewController = NickNameModalViewController_MVVM()
         nickNameModalViewController.delegate = self
         if let sheet = nickNameModalViewController.sheetPresentationController {
             sheet.detents = [.medium()]
@@ -381,7 +381,7 @@ extension LoginViewController_MVVM: UITextFieldDelegate {
 
 //MARK: - NickNameProtocol
 
-extension LoginViewController_MVVM: nickNameProtocol {
+extension LoginViewController_MVVM: nickNameProtocol_MVVM {
     func setupNickName(nickname: String?, isComplete: Bool?) {
         if let nickname {
             nickNameText = nickname
