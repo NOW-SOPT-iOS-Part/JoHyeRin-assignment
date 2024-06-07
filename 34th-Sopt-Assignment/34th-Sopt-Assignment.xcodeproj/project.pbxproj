@@ -27,6 +27,8 @@
 		D039060D2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039060C2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift */; };
 		D039060F2BE02DC1001E1B41 /* HomeCollectionViewAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039060E2BE02DC1001E1B41 /* HomeCollectionViewAdCell.swift */; };
 		D03FACFE2C12AC570088955D /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03FACFD2C12AC570088955D /* NSObject+.swift */; };
+		D03FAD0B2C12C0310088955D /* LoginViewController_MVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03FAD0A2C12C0310088955D /* LoginViewController_MVVM.swift */; };
+		D03FAD0D2C12C04C0088955D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03FAD0C2C12C04C0088955D /* LoginViewModel.swift */; };
 		D07799132BCD7AF10016083D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07799122BCD7AF10016083D /* UIViewController+.swift */; };
 		D0A544612BC1B97500E7F102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544602BC1B97500E7F102 /* AppDelegate.swift */; };
 		D0A544632BC1B97500E7F102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A544622BC1B97500E7F102 /* SceneDelegate.swift */; };
@@ -96,6 +98,8 @@
 		D039060C2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionContentsHeaderView.swift; sourceTree = "<group>"; };
 		D039060E2BE02DC1001E1B41 /* HomeCollectionViewAdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewAdCell.swift; sourceTree = "<group>"; };
 		D03FACFD2C12AC570088955D /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
+		D03FAD0A2C12C0310088955D /* LoginViewController_MVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController_MVVM.swift; sourceTree = "<group>"; };
+		D03FAD0C2C12C04C0088955D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D07799122BCD7AF10016083D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		D0A5445D2BC1B97500E7F102 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A544602BC1B97500E7F102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			children = (
 				D0A544642BC1B97500E7F102 /* ViewController.swift */,
 				D00E65DC2BD6EADA00DDC325 /* Login */,
+				D03FAD072C12BFCB0088955D /* Login_MVVM */,
 				D00E65E02BD6EB5600DDC325 /* NickName */,
 				D00E65DD2BD6EAE700DDC325 /* Welcome */,
 				D00E65F92BD9355800DDC325 /* Main */,
@@ -282,6 +287,34 @@
 				D03905A22BDADCD0001E1B41 /* HomeViewContoller.swift */,
 			);
 			path = ViewContoller;
+			sourceTree = "<group>";
+		};
+		D03FAD072C12BFCB0088955D /* Login_MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				D03FAD092C12C0170088955D /* View */,
+				D03FAD082C12C00E0088955D /* ViewModel */,
+			);
+			path = Login_MVVM;
+			sourceTree = "<group>";
+		};
+		D03FAD082C12C00E0088955D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D03FAD0C2C12C04C0088955D /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D03FAD092C12C0170088955D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D03FAD0A2C12C0310088955D /* LoginViewController_MVVM.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		D0A544542BC1B97500E7F102 = {
@@ -494,6 +527,8 @@
 				D03905B52BDB1AA1001E1B41 /* HomeCollectionViewPagingCell.swift in Sources */,
 				D0A5449F2BCB040C00E7F102 /* WelcomeViewController.swift in Sources */,
 				D039060D2BE022C5001E1B41 /* HomeCollectionContentsHeaderView.swift in Sources */,
+				D03FAD0B2C12C0310088955D /* LoginViewController_MVVM.swift in Sources */,
+				D03FAD0D2C12C04C0088955D /* LoginViewModel.swift in Sources */,
 				D00C2BBA2BD170D000CD66D0 /* NickNameModalViewController.swift in Sources */,
 				D0B882D22BEA570100633FD8 /* MovieTableViewCell.swift in Sources */,
 				D00E65F82BD92D2100DDC325 /* WelecomeView.swift in Sources */,
