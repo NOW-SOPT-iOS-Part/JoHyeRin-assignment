@@ -48,10 +48,10 @@ final class MovieViewController: UIViewController {
             date = format.string(from: yesterday)
         }
         
-        BoxOfficeService.shared.getDailyBoxOffice(date: date) { [weak self] response in
+        BoxOfficeService.shared.getDailyBoxOffice(targerDate: date) { [weak self] response in
             switch response {
             case .success(let data):
-                guard let data = data as? MovieModel else {
+                guard let data = data as? DailyBoxOfficeResponseDTO else {
                     return }
                 self?.dailyBoxOfficeModelList = data.boxOfficeResult.dailyBoxOfficeList
             case .requestErr:

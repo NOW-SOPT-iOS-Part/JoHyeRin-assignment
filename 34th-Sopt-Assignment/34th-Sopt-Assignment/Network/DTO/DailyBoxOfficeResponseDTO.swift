@@ -1,14 +1,14 @@
 //
-//  MovieModel.swift
+//  DailyBoxOfficeResponseDTO.swift
 //  34th-Sopt-Assignment
 //
-//  Created by 조혜린 on 5/7/24.
+//  Created by 조혜린 on 6/7/24.
 //
 
 import Foundation
 
-// MARK: - MovieModel
-struct MovieModel: Codable {
+// MARK: - DailyBoxOfficeResponseDTO
+struct DailyBoxOfficeResponseDTO: Codable {
     let boxOfficeResult: BoxOfficeResult
 }
 
