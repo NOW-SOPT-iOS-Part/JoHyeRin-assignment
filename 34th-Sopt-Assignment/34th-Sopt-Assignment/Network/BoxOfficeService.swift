@@ -17,14 +17,14 @@ final class BoxOfficeService {
 }
 
 extension BoxOfficeService {
-    func getDailyBoxOffice(date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        provider.request(.getDailyBoxOffice(targetDate: date)) { result in
+    func getDailyBoxOffice(targerDate: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        provider.request(.getDailyBoxOffice(targetDate: targerDate)) { result in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, MovieModel.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, DailyBoxOfficeResponseDTO.self)
                 completion(networkResult)
                 
             case .failure:

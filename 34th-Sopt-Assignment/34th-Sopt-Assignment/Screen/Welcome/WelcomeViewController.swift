@@ -50,6 +50,8 @@ extension WelcomeViewController {
     //MARK: - Objc Method
     
     @objc func gotoMainButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
+        let mainVC = MainViewController()
+        
+        self.navigationController?.pushViewController(mainVC, animated: true)
     }
 }
