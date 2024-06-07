@@ -20,7 +20,7 @@ final class MainView: UIView {
     private let homeVC = HomeViewController()
     private lazy var liveVC = LiveViewController()
     private lazy var tvVC = TvProgramViewController()
-    private lazy var movieVC = MovieViewController()
+    private lazy var movieVC = MovieViewController_MVVM()
     private lazy var pmVC = ParamountViewController()
     lazy var tabViewControllers = [homeVC, liveVC, tvVC, movieVC, pmVC]
     

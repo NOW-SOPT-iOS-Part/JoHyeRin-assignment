@@ -320,7 +320,7 @@ extension LoginViewController_MVVM {
             pwTextField.text = ""
             isPwTextEmpty = true
         }
-        isLoginButtonEnabled = true
+        isLoginButtonEnabled = false
     }
     
     @objc func loginButtonTapped() {
